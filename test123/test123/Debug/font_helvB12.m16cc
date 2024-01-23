@@ -1,0 +1,6 @@
+-I"C:\WorkSpace\test123\test123\inc"
+-c
+-finfo
+-dir "C:\WorkSpace\test123\test123\Debug"
+-R8CE
+"C:\WorkSpace\test123\test123\src\font_helvB12.c"

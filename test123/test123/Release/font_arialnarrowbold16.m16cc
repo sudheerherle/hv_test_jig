@@ -1,0 +1,6 @@
+-I"C:\WorkSpace\test123\test123\inc"
+-c
+-finfo
+-dir "C:\WorkSpace\test123\test123\Release"
+-R8CE
+"C:\WorkSpace\test123\test123\src\font_arialnarrowbold16.c"

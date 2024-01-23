@@ -1,0 +1,17 @@
+void Draw_Main_Window();
+void Display_Key_Menu();
+unsigned char Key_Type_Press_Event(unsigned int key_timeout_value);
+unsigned long ReadN_Average_ADC(unsigned char channel,unsigned long avg,unsigned long base_value);
+void Conv_Data2_BCD(unsigned long temp_hex_loc,unsigned char * temp_chr_ptr);
+unsigned char Conv_Data2_Ascii(unsigned long temp_hex_loc,unsigned char * temp_chr_ptr);
+unsigned char Conv_Data2_AsciiDecimal(unsigned long temp_hex_loc,unsigned char * temp_chr_ptr);
+void Delay_Half_Seconds(unsigned int delayhalf_sec_ctr);
+void Display_HVTKey_Menu(unsigned char cur_flag);
+void Write2_DAC_Register(unsigned int required_dac_value);
+void Display_Searching_Message();
+signed char Wait4_User_Confirmation(unsigned char nextbut);
+unsigned int Check_Range(unsigned long actual_value,unsigned long lower_range_value,unsigned long higher_range_value);
+void Display_Updated_Message(unsigned long test_number,unsigned char continue_flag);
+void Txr_Array_Data(unsigned char * to_array_ptr,unsigned char * from_array_ptr,unsigned char nob);
+void Display_Filament_Interchange();
+void Delay_Seconds_With_Key(unsigned int delayhalf_sec_ctr);
