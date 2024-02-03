@@ -45,7 +45,8 @@ void main(void)
 	Initialise_Port_Structure();
 	Initialise_Port_Pins();
 //	TFT_9325New_Init();
-	TFT_9341New_Init();
+//	TFT_9341New_Init();
+	TFT_ST7789_Init();
 	Write_Center_Text(0,TFT_SIZE_X,((unsigned int)TFT_SIZE_Y / (unsigned int)2) - (unsigned int)30,&company_name[0],(unsigned far char *)&arial_narrow_bold20[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
 	Write_Center_Text(0,TFT_SIZE_X,TFT_SIZE_Y / 2,&firmware_version[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
 	Write_Center_Text(0,TFT_SIZE_X,((unsigned int)TFT_SIZE_Y / (unsigned int)2) + (unsigned int)30,&model_name[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTRED,WHITE,TFT_MODE_FULL);

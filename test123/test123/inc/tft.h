@@ -25,6 +25,111 @@
 // |________________|
 //
 
+
+#define START_OSC			0x00 //data read at this instruction should be 0x9735 --> use for test connection
+#define DRIV_OUT_CTRL		0x01
+#define DRIV_WAV_CTRL		0x02
+#define ENTRY_MOD			0x03
+#define RESIZE_CTRL			0x04
+#define DISP_CTRL1			0x07
+#define DISP_CTRL2			0x08
+#define DISP_CTRL3			0x09
+#define DISP_CTRL4			0x0A
+#define RGB_DISP_IF_CTRL1	0x0C
+#define FRM_MARKER_POS		0x0D
+#define RGB_DISP_IF_CTRL2	0x0F
+#define POW_CTRL1			0x10
+#define POW_CTRL2			0x11
+#define POW_CTRL3			0x12
+#define POW_CTRL4			0x13
+#define GRAM_HOR_AD			0x20
+#define GRAM_VER_AD			0x21
+#define RW_GRAM				0x22
+#define POW_CTRL7			0x29
+#define FRM_RATE_COL_CTRL	0x2B
+#define GAMMA_CTRL1			0x30
+#define GAMMA_CTRL2			0x31
+#define GAMMA_CTRL3			0x32
+#define GAMMA_CTRL4			0x35 
+#define GAMMA_CTRL5			0x36
+#define GAMMA_CTRL6			0x37
+#define GAMMA_CTRL7			0x38
+#define GAMMA_CTRL8			0x39
+#define GAMMA_CTRL9			0x3C
+#define GAMMA_CTRL10		0x3D
+#define HOR_START_AD		0x50
+#define HOR_END_AD			0x51
+#define VER_START_AD		0x52
+#define VER_END_AD			0x53
+#define GATE_SCAN_CTRL1		0x60
+#define GATE_SCAN_CTRL2		0x61
+#define GATE_SCAN_CTRL3		0x6A
+#define PART_IMG1_DISP_POS	0x80
+#define PART_IMG1_START_AD	0x81
+#define PART_IMG1_END_AD	0x82
+#define PART_IMG2_DISP_POS	0x83
+#define PART_IMG2_START_AD	0x84
+#define PART_IMG2_END_AD	0x85
+#define PANEL_IF_CTRL1		0x90
+#define PANEL_IF_CTRL2		0x92
+#define PANEL_IF_CTRL3		0x93
+#define PANEL_IF_CTRL4		0x95
+#define PANEL_IF_CTRL5		0x97
+#define PANEL_IF_CTRL6		0x98
+#define INT_TIMING_CTRL1	0xE3
+#define INT_TIMING_CTRL2	0xE7
+#define INT_TIMING_CTRL3	0xEF
+
+#define BLACK              (unsigned int)0x0000	//0b0000000000000000		//	00000 000000 00000
+#define BRIGHTBLUE         (unsigned int)0xf800	//0b1111100000000000		//	00000 000000 11111
+#define BRIGHTGREEN        (unsigned int)0x0600	//0b0000011000000000		//	00000 111111 00000
+#define BRIGHTCYAN         (unsigned int)0xFFE0	//0b1111111111100000		//	00000 111111 11111
+#define BRIGHTRED          (unsigned int)0x001F	//0b0000000000011111		//	11111 000000 00000
+#define BRIGHTMAGENTA      (unsigned int)0xF81F	//0b1111100000011111		//	11111 000000 11111
+#define BRIGHTYELLOW       (unsigned int)0x07FF	//0b0000011111111111		//	11111 111111 00000
+#define BLUE               (unsigned int)0x8000	//0b1000000000000000		//	00000 000000 10000
+#define GREEN              (unsigned int)0x0400	//0b0000010000000000		//	00000 100000 00000
+#define CYAN               (unsigned int)0x8400	//0b1000010000000000		//	00000 100000 10000
+#define RED                (unsigned int)0x0010	//0b0000000000010000		//	10000 000000 00000
+#define MAGENTA            (unsigned int)0x8010	//0b1000000000010000		//	10000 000000 10000
+#define BROWN              (unsigned int)0x041F	//0b0000010000011111		//	11111 100000 00000
+#define LIGHTGRAY          (unsigned int)0x8410	//0b1000010000010000		//	10000 100000 10000
+#define DARKGRAY           (unsigned int)0x4208	//0b0100001000001000		//	01000 010000 01000
+#define LIGHTBLUE          (unsigned int)0xFC10	//0b1111110000010000		//	10000 100000 11111
+#define LIGHTGREEN         (unsigned int)0x87F0	//0b1000011111110000		//	10000 111111 10000
+#define LIGHTCYAN          (unsigned int)0xFFF0	//0b1111111111110000		//	10000 111111 11111
+#define LIGHTRED           (unsigned int)0x841F	//0b1000010000011111		//	11111 100000 10000
+#define LIGHTMAGENTA       (unsigned int)0xFC1F	//0b1111110000011111		//	11111 100000 11111
+#define YELLOW             (unsigned int)0x87FF	//0b1000011111111111		//	11111 111111 10000
+#define WHITE              (unsigned int)0xffff	//0b1111111111111111		//	11111 111111 11111
+
+#define GRAY0       	   (unsigned int)0xE71C	//0b1110011100011100		//	11100 111000 11100
+#define GRAY1         	   (unsigned int)0xC618	//0b1100011000011000		//	11000 110000 11000   
+#define GRAY2              (unsigned int)0xA514	//0b1010010100010100		//	10100 101000 10100   
+#define GRAY3              (unsigned int)0x8410	//0b1000010000010000		//	10000 100000 10000
+#define GRAY4              (unsigned int)0x630C	//0b0110001100001100		//	01100 011000 01100
+#define GRAY5              (unsigned int)0x4208	//0b0100001000001000		//	01000 010000 01000
+#define GRAY6	           (unsigned int)0x2104	//0b0010000100000100		//	00100 001000 00100
+
+//**** I/O Ports
+//#define TFT_DATA_PORTLO		p6
+#define TFT_DATA_PORT		p3
+//#define TFT_PORTLO_DIR		pd6
+#define TFT_PORT_DIR		pd3//1
+
+#define TFT_OUTPUT_DIRECTION		0xff
+#define TFT_INPUT_DIRECTION			0x00
+#define _Tft_Port_Input		{TFT_PORT_DIR = TFT_INPUT_DIRECTION}
+#define _Tft_Port_Output	{TFT_PORT_DIR = TFT_OUTPUT_DIRECTION}	
+
+
+//**** I/O Command Port Bits
+#define TFT_RD_PIN    		p5_3		/* LCD E Pin */
+#define TFT_WR_PIN    		p5_2		/* LCD RW Pin */
+#define TFT_RS_PIN  		p5_1		/* LCD TFT_RS_PIN pin */
+#define TFT_RESET_PIN    	p5_4		/* LCD Reset pin */
+#define TFT_CS_PIN    		p5_0		/* LCD Chip Select */
+
 #define ILI9341_NOP                                                                      0x00
 #define ILI9341_RESET                                                                    0x01
 #define ILI9341_READ_DISPLAY_IDENTIFICATION_INFORMATION                                  0x04
@@ -196,7 +301,7 @@
 
 //#define WHITE_COLOR_SCHEME
 #define BLACK_COLOR_SCHEME
-
+/*
 // Color codes
 #ifdef WHITE_COLOR_SCHEME
 
@@ -205,13 +310,15 @@
 #define WHITE              (unsigned int)0b1111111111111111		//	11111 111111 11111
 //#define BRIGHTBLUE         (unsigned int)0b1111100000000000		//	00000 000000 11111
 #define BRIGHTBLUE         (unsigned int)0b1111111111100000		//	00000 000000 11111
+
+
 #else
 #define WHITE              (unsigned int)0b0000000000000000		//	00000 000000 00000
 #define BLACK              (unsigned int)0b1111111111111111		//	11111 111111 11111
 //#define BRIGHTBLUE         (unsigned int)0b1111110000010000		//	10000 100000 11111
 #define BRIGHTBLUE         (unsigned int)0b1111111111100000		//	10000 100000 11111
 #endif
-
+*/
                                  		// BBBBBGGGGGGRRRRR		//	RRRRR GGGGGG BBBBB 
 //#define BRIGHTGREEN        (unsigned int)0b0000011111100000		//	00000 111111 00000
 #define BRIGHTGREEN        (unsigned int)0b0000011111100000		//	00000 111111 00000
@@ -241,6 +348,7 @@
 #define GRAY4              (unsigned int)0b0110001100001100		//	01100 011000 01100
 #define GRAY5              (unsigned int)0b0100001000001000		//	01000 010000 01000
 #define GRAY6	           (unsigned int)0b0010000100000100		//	00100 001000 00100
+
 
 //**** I/O Ports
 #define TFT_DATA_PORTLO		p6
@@ -272,7 +380,7 @@ typedef enum
 
 
 
-
+unsigned int Read_TFT_RData(unsigned int index);
 void DelayMs(unsigned long delay);
 void TFT_Init_IO(void);
 void TFT_9328_Init(void);
