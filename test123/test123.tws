@@ -8,37 +8,7 @@
 "BuildMultipleSettings" "test123|Debug|test123|Config1|test123|Release||" 
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
-"C:\WorkSpace\sudheer\sudheer.hws" 
-"C:\WorkSpace\test123\test123\inc\main.h" 
-"C:\WorkSpace\test123\test123\inc\resetprg.h" 
-"C:\WorkSpace\test123\test123\inc\tft.h" 
-"C:\WorkSpace\test123\test123\ncrt0.a30" 
-"C:\WorkSpace\test123\test123\Release\ncrt0.lst" 
-"C:\WorkSpace\test123\test123\sect30.inc" 
-"C:\WorkSpace\test123\test123\src\adc.c" 
-"C:\WorkSpace\test123\test123\src\Copy of font_arialnarrowbold16.c" 
-"C:\WorkSpace\test123\test123\src\font_arialnarrowbold16.c" 
-"C:\WorkSpace\test123\test123\src\fvector.c" 
-"C:\WorkSpace\test123\test123\src\HVTJ.c" 
-"C:\WorkSpace\test123\test123\src\resetprg.c" 
-"C:\WorkSpace\test123\test123\src\tft.c" 
-"C:\WorkSpace\test123\test123\test123.c" 
 [WORKSPACE_FILE_STATES]
-"C:\WorkSpace\sudheer\sudheer.hws" 0 0 1449 456 0 10 
-"C:\WorkSpace\test123\test123\Release\ncrt0.lst" 26 26 775 242 0 7 
-"C:\WorkSpace\test123\test123\inc\main.h" 52 52 1303 287 0 14 
-"C:\WorkSpace\test123\test123\inc\resetprg.h" 52 52 775 242 0 3 
-"C:\WorkSpace\test123\test123\inc\tft.h" 26 26 1303 287 0 13 
-"C:\WorkSpace\test123\test123\ncrt0.a30" 0 0 1449 456 0 6 
-"C:\WorkSpace\test123\test123\sect30.inc" 104 104 775 242 0 5 
-"C:\WorkSpace\test123\test123\src\Copy of font_arialnarrowbold16.c" 0 0 775 242 0 1 
-"C:\WorkSpace\test123\test123\src\HVTJ.c" -8 -31 1449 614 1 9 
-"C:\WorkSpace\test123\test123\src\adc.c" 130 130 1303 287 0 11 
-"C:\WorkSpace\test123\test123\src\font_arialnarrowbold16.c" 104 104 775 242 0 0 
-"C:\WorkSpace\test123\test123\src\fvector.c" 0 0 1449 456 0 4 
-"C:\WorkSpace\test123\test123\src\resetprg.c" 52 52 775 242 0 8 
-"C:\WorkSpace\test123\test123\src\tft.c" 0 0 1449 614 0 12 
-"C:\WorkSpace\test123\test123\test123.c" 26 26 775 242 0 2 
 [LOADED_PROJECTS]
 "test123" 
 [END]
