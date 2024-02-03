@@ -165,6 +165,20 @@
 #define GRAY6	           (unsigned int)0b0010000100000100		//	00100 001000 00100
 
 //**** I/O Ports
+//#define TFT_DATA_PORTLO		p6
+#define TFT_DATA_PORT		p3
+//#define TFT_PORTLO_DIR		pd6
+#define TFT_PORT_DIR		pd3//1
+
+
+//**** I/O Command Port Bits
+#define TFT_RD_PIN    		p5_3		/* LCD E Pin */
+#define TFT_WR_PIN    		p5_2		/* LCD RW Pin */
+#define TFT_RS_PIN  		p5_1		/* LCD TFT_RS_PIN pin */
+#define TFT_RESET_PIN    	p5_4		/* LCD Reset pin */
+#define TFT_CS_PIN    		p5_0		/* LCD Chip Select */
+
+//**** I/O Ports
 #define TFT_DATA_PORTLO		p6
 #define TFT_DATA_PORTHI		p3
 #define TFT_PORTLO_DIR		pd6
