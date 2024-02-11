@@ -156,9 +156,12 @@
 [WINDOW_POSITION_STATE_DATA_VD3]
 [WINDOW_POSITION_STATE_DATA_VD4]
 [WINDOW_Z_ORDER]
-"C:\WorkSpace\test123\test123\src\HVTJ.c" 
 "C:\WorkSpace\test123\test123\src\tft.c" 
+"C:\WorkSpace\test123\test123\src\HVTJ.c" 
 "C:\WorkSpace\test123\test123\inc\tft.h" 
+"C:\WorkSpace\test123\test123\src\init.c" 
+"C:\WorkSpace\test123\test123\inc\sfr_r82b.h" 
+"C:\WorkSpace\test123\test123\sfr_r82b.inc" 
 "C:\WorkSpace\test123\test123\inc\main.h" 
 "C:\WorkSpace\test123\test123\src\adc.c" 
 "C:\WorkSpace\sudheer\sudheer.hws" 
