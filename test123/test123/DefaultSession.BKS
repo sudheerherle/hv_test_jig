@@ -216,11 +216,11 @@
 [CONFIG_INFO_VD4]
 0 
 [WINDOW_POSITION_STATE_DATA_VD1]
-"{WK_00000001_CmdLine}" "WINDOW" 59422 0 1 "0.50" 277 0 0 350 200 17 0 "32771|32772|32778|<<separator>>|32773|32774|<<separator>>|32820|<<separator>>|32801|32824" "0.0" 
+"{WK_00000001_CmdLine}" "WINDOW" 59422 0 0 "0.50" 277 0 0 350 200 17 0 "32771|32772|32778|<<separator>>|32773|32774|<<separator>>|32820|<<separator>>|32801|32824" "0.0" 
 "{WK_00000001_LOCALS}test123DefaultSession" "WINDOW" 59422 0 0 "0.30" 277 0 0 350 200 18 0 "32772|32776|32777|32778|32779" "0.0" 
 "{WK_00000001_MAPSCT}test123DefaultSession" "WINDOW" 59422 0 1 "0.40" 277 0 0 350 200 2065 0 "32812|<<separator>>|32813|32814|<<separator>>|32816|<<separator>>|32822|32821|<<separator>>|32796|32797|<<separator>>|32833|<<separator>>|32825|32829|<<separator>>|32852" "52.7" 
 "{WK_00000001_MEMORY}" "WINDOW" 59422 0 3 "0.09" 277 0 0 350 200 18 0 "42202|42203|42204|42233|<<separator>>|42206|42205|42230|42229|42207|<<separator>>|42208|42209|42210|49076|42228|42227|<<separator>>|42231|42232|42234|42235|<<separator>>|42211|<<separator>>|32796|32797" "0.0" 
-"{WK_00000001_OUTPUT}" "WINDOW" 59422 0 2 "0.61" 277 0 0 350 200 18 0 "36756|36757|36758|36759|<<separator>>|36746|36747|<<separator>>|39531|<<separator>>|39500|39534|<<separator>>|36687" "0.0" 
+"{WK_00000001_OUTPUT}" "WINDOW" 59422 0 1 "1.00" 277 0 0 350 200 18 0 "36756|36757|36758|36759|<<separator>>|36746|36747|<<separator>>|39531|<<separator>>|39500|39534|<<separator>>|36687" "0.0" 
 "{WK_00000001_STATUS}test123DefaultSession" "WINDOW" 59422 0 4 "0.25" 277 0 0 350 200 17 0 "" "0.0" 
 "{WK_00000002_WORKSPACE}" "WINDOW" 59420 0 0 "1.00" 455 0 0 350 200 18 0 "" "0.0" 
 "{WK_TB00000001_STANDARD}" "TOOLBAR 0" 59419 0 2 "0.00" 0 0 0 0 0 18 0 "" "0.0" 
@@ -240,14 +240,14 @@
 "{WK_TB00000023_RTOS}" "TOOLBAR 0" 59419 2 8 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 "{WK_TB00000026_MACRO}" "TOOLBAR 0" 59419 1 5 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 "{WK_TB00000028_RTOSDEBUG}" "TOOLBAR 0" 59419 2 2 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
-"{WK_TB00000029_SYSTEMTOOL}" "TOOLBAR 0" 59419 2 4 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
+"{WK_TB00000029_SYSTEMTOOL}" "TOOLBAR 0" 59419 2 3 "0.00" 0 0 0 0 0 17 0 "" "0.0" 
 [WINDOW_POSITION_STATE_DATA_VD2]
 [WINDOW_POSITION_STATE_DATA_VD3]
 [WINDOW_POSITION_STATE_DATA_VD4]
 [WINDOW_Z_ORDER]
+"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" 
 "D:\Others\hv_test_jig\test123\test123\src\tft.c" 
 "D:\Others\hv_test_jig\test123\test123\ncrt0.a30" 
-"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" 
 "D:\Others\hv_test_jig\test123\test123\src\general.c" 
 "D:\Others\hv_test_jig\test123\test123\inc\tft.h" 
 "D:\Others\hv_test_jig\test123\test123\Config1\test123.map" 

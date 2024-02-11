@@ -13,6 +13,20 @@
 #include "transactions.h"
 #include "adc.h"
 
+struct driverInfo{
+	unsigned long int displayID;    // response of 0x04h
+	unsigned long int displayStatus; //response of 0x09h
+	unsigned char displayPowerMode; // response of 0x0ah
+	unsigned char displayPixelFormat; // response of 0x0ch;
+	unsigned char displayImageMode; // response of 0x0dh;
+	unsigned char displaySignalMode; // response of 0x0eh
+	unsigned char displaySelfDiagnosticResult; // response of 0x0fh
+};
+
+unsigned long int byteToDWord(unsigned char lsb1, unsigned char lsb2, unsigned char msb1, unsigned char msb2);
+
+struct driverInfo driverStatus;
+
 void DelayMs(unsigned long delay)
 {
 	_delay_us(delay)
@@ -108,14 +122,17 @@ void Send_TFT_Data(unsigned int data)
 
 unsigned int Read_TFT_Data1()
 {
-	unsigned int data;
+	unsigned char data;
 	TFT_Set_Port_Read();
 	RD = 1;
+	DelayMs(1);
 	RD = 0;
+	DelayMs(1);
 	RD = 1;
-	data = TFT_DATA_PORTHI;
-	data = data << 8;
-	data |= TFT_DATA_PORTLO;	
+	
+	//data = TFT_DATA_PORTHI;
+//	data = data << 8;
+	data = TFT_DATA_PORTLO;	
 	TFT_Set_Port_Write();
 	return (data);
 }
@@ -149,6 +166,122 @@ void TFT_reset()
     DelayMs(50);
     RESET = 1;
     DelayMs(50);
+}
+
+void TFT_ST7789_New_Init(void)
+{
+	TFT_Init_IO();
+	RESET = 1;
+	RS = 1;
+	WR = 1;
+	RD = 1;
+    // Reset controller
+	RESET = 0;
+    DelayMs(200);
+	RESET = 1; // start
+    DelayMs(200);
+	
+	//TFT_reset();
+	
+    /* Reset the display controller */
+   // RESET = 0;
+  //  DelayMs(100);
+   // RESET = 1;
+   // DelayMs(50);
+
+    Send_TFT_Command(ST7789V_CMD_DISPOFF);
+    Send_TFT_Command(ST7789V_CMD_SLPOUT);    /* Exit Sleep mode */
+
+    DelayMs(100);
+
+    Send_TFT_Command(ST7789V_CMD_MADCTL);
+    Send_TFT_Data(0xA0);    /* MADCTL: memory data access control */
+
+    Send_TFT_Command(ST7789V_CMD_COLMOD);
+    Send_TFT_Data(0x65);    /* COLMOD: Interface Pixel format */
+
+    Send_TFT_Command(ST7789V_CMD_PORCTRL);
+    Send_TFT_Data(0x0C);
+    Send_TFT_Data(0x0C);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x33);
+    Send_TFT_Data(0x33);    /* PORCTRK: Porch setting */
+
+    Send_TFT_Command(ST7789V_CMD_GCTRL);
+    Send_TFT_Data(0x35);    /* GCTRL: Gate Control */
+
+    Send_TFT_Command(ST7789V_CMD_VCOMS);
+    Send_TFT_Data(0x2B);    /* VCOMS: VCOM setting */
+
+    Send_TFT_Command(ST7789V_CMD_LCMCTRL);
+    Send_TFT_Data(0x2C);    /* LCMCTRL: LCM Control */
+
+    Send_TFT_Command(ST7789V_CMD_VDVVRHEN);
+    Send_TFT_Data(0x01);
+    Send_TFT_Data(0xFF);    /* VDVVRHEN: VDV and VRH Command Enable */
+
+    Send_TFT_Command(ST7789V_CMD_VRHS);
+    Send_TFT_Data(0x11);    /* VRHS: VRH Set */
+
+    Send_TFT_Command(ST7789V_CMD_VDVS);
+    Send_TFT_Data(0x20);    /* VDVS: VDV Set */
+
+    Send_TFT_Command(ST7789V_CMD_FRCTRL2);
+    Send_TFT_Data(0x0F);    /* FRCTRL2: Frame Rate control in normal mode */
+
+    Send_TFT_Command(ST7789V_CMD_PWCTRL1);
+    Send_TFT_Data(0xA4);
+    Send_TFT_Data(0xA1);    /* PWCTRL1: Power Control 1 */
+
+    Send_TFT_Command(ST7789V_CMD_PVGAMCTRL);
+    Send_TFT_Data(0xD0);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x05);
+    Send_TFT_Data(0x0E);
+    Send_TFT_Data(0x15);
+    Send_TFT_Data(0x0D);
+    Send_TFT_Data(0x37);
+    Send_TFT_Data(0x43);
+    Send_TFT_Data(0x47);
+    Send_TFT_Data(0x09);
+    Send_TFT_Data(0x15);
+    Send_TFT_Data(0x12);
+    Send_TFT_Data(0x16);
+    Send_TFT_Data(0x19);    /* PVGAMCTRL: Positive Voltage Gamma control */
+
+    Send_TFT_Command(ST7789V_CMD_NVGAMCTRL);
+    Send_TFT_Data(0xD0);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x05);
+    Send_TFT_Data(0x0D);
+    Send_TFT_Data(0x0C);
+    Send_TFT_Data(0x06);
+    Send_TFT_Data(0x2D);
+    Send_TFT_Data(0x44);
+    Send_TFT_Data(0x40);
+    Send_TFT_Data(0x0E);
+    Send_TFT_Data(0x1C);
+    Send_TFT_Data(0x18);
+    Send_TFT_Data(0x16);
+    Send_TFT_Data(0x19);    /* NVGAMCTRL: Negative Voltage Gamma control */
+
+    Send_TFT_Command(ST7789V_CMD_RASET);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0xEF);    /* Y address set */
+
+    Send_TFT_Command(ST7789V_CMD_CASET);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x01);
+    Send_TFT_Data(0x3F);    /* X address set */
+
+    DelayMs(10);
+	Clear_Device_ILI9341(RED);
+    Send_TFT_Command(ST7789V_CMD_DISPON);
+	Clear_Device_ILI9341(RED);
+
 }
 
 void TFT_9341New_Init(void)
@@ -285,23 +418,70 @@ DelayMs(200);
 }
 
 void Read_Driver_Info(){
-	unsigned int data1,data2,data3,data4;
+	
+	unsigned char data1,data2,data3,data4,data5;
 	Send_TFT_Command(0x04);
 	data1 = Read_TFT_Data1();
 	data2 = Read_TFT_Data1();
 	data3 = Read_TFT_Data1();
 	data4 = Read_TFT_Data1();
 	
+	driverStatus.displayID = byteToDWord (data1, data2, data3, data4);
+	
 	Send_TFT_Command(0x09);
 	data1 = Read_TFT_Data1();
 	data2 = Read_TFT_Data1();
 	data3 = Read_TFT_Data1();
 	data4 = Read_TFT_Data1();
+	data5 = Read_TFT_Data1();
+	driverStatus.displayStatus = byteToDWord (data2, data3, data4, data5);
+	
+	
+	Send_TFT_Command(0x0A);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	
+	driverStatus.displayPowerMode = data2;
+	
+	Send_TFT_Command(0x0C);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	driverStatus.displayPixelFormat = data2;
+	
+	
+	Send_TFT_Command(0x0D);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	driverStatus.displayImageMode = data2;
+	
+	Send_TFT_Command(0x0E);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	driverStatus.displaySignalMode = data2;
+	
+	Send_TFT_Command(0x0f);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	driverStatus.displaySelfDiagnosticResult = data2;
+	
 	
 }
 
+unsigned long int byteToDWord(unsigned char lsb1, unsigned char lsb2, unsigned char msb1, unsigned char msb2){
+
+	unsigned long int Dword = 0;
+	Dword = msb2;
+	Dword = Dword << 8 ;
+	Dword |= msb1;
+	Dword = Dword << 8;
+	Dword |= lsb2;
+	Dword = Dword << 8;
+	Dword |= lsb1;	
+	return Dword;	
+}
+
 /*
-void Send_TFT_RData(unsigned int index, unsigned int data)
+void Send_TFT_RData_ST7789(unsigned int index, unsigned int data)
 {
 	TFT_RS_PIN = 0;
 	TFT_DATA_PORT = (unsigned char)index;
@@ -317,7 +497,7 @@ void Send_TFT_RData(unsigned int index, unsigned int data)
 }
 
 
-void Send_TFT_Command(unsigned int cmd)
+void Send_TFT_Command_ST7789(unsigned int cmd)
 {
 	//TFT_DATA_PORTHI = cmd >> 8;
 	//TFT_DATA_PORTLO = cmd;
@@ -328,7 +508,7 @@ void Send_TFT_Command(unsigned int cmd)
 	TFT_RS_PIN = 1;
 }
 
-void Send_TFT_CData(unsigned char data)
+void Send_TFT_CData_ST7789(unsigned char data)
 {
 	TFT_DATA_PORT = data;
 	TFT_WR_PIN = 0;

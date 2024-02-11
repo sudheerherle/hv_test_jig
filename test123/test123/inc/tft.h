@@ -103,6 +103,96 @@
 #define ILI9341_INTERFACE                                                                0xF6
 #define ILI9341_PRC                                                                      0xF7
 
+
+
+//ST7789
+
+#define ST7789V_CMD_NOP       (0x00) /* Empty command */
+#define ST7789V_CMD_SWRESET   (0x01) /* Software Reset */
+#define ST7789V_CMD_RDDID     (0x04) /* Read Display ID */
+#define ST7789V_CMD_RDDST     (0x09) /* Read Display Status */
+#define ST7789V_CMD_RDDPM     (0x0A) /* Read Display Power Mode */
+#define ST7789V_CMD_RDDMADCTL (0x0B) /* Read Display MADCTL */
+#define ST7789V_CMD_RDDCOLMOD (0x0C) /* Read Display Pixel Format */
+#define ST7789V_CMD_RDDIM     (0x0D) /* Read Display Image Mode */
+#define ST7789V_CMD_RDDSM     (0x0E) /* Read Display Signal Mode */
+#define ST7789V_CMD_RDDSDR    (0x0F) /* Read Display Self-Diagnostic Result */
+#define ST7789V_CMD_SLPIN     (0x10) /* Sleep in */
+#define ST7789V_CMD_SLPOUT    (0x11) /* Sleep Out */
+#define ST7789V_CMD_PTLON     (0x12) /* Partial Display Mode On */
+#define ST7789V_CMD_NORON     (0x13) /* Normal Display Mode On */
+#define ST7789V_CMD_INVOFF    (0x20) /* Display Inversion Off */
+#define ST7789V_CMD_INVON     (0x21) /* Display Inversion On */
+#define ST7789V_CMD_GAMSET    (0x26) /* Gamma Set */
+#define ST7789V_CMD_DISPOFF   (0x28) /* Display Off */
+#define ST7789V_CMD_DISPON    (0x29) /* Display On */
+#define ST7789V_CMD_CASET     (0x2A) /* Column Address Set */
+#define ST7789V_CMD_RASET     (0x2B) /* Row Address Set */
+#define ST7789V_CMD_RAMWR     (0x2C) /* Memory Write */
+#define ST7789V_CMD_RAMRD     (0x2E) /* Memory Read */
+#define ST7789V_CMD_PTLAR     (0x30) /* Partial Area */
+#define ST7789V_CMD_VSCRDEF   (0x33) /* Vertical Scrolling Definition */
+#define ST7789V_CMD_TEOFF     (0x34) /* Tearing Effect Line OFF */
+#define ST7789V_CMD_TEON      (0x35) /* Tearing Effect Line On */
+#define ST7789V_CMD_MADCTL    (0x36) /* Memory Data Access Control */
+#define ST7789V_CMD_VSCSAD    (0x37) /* Vertical Scroll Start Address of RAM */
+#define ST7789V_CMD_IDMOFF    (0x38) /* Idle Mode Off */
+#define ST7789V_CMD_IDMON     (0x39) /* Idle mode on */
+#define ST7789V_CMD_COLMOD    (0x3A) /* Interface Pixel Format */
+#define ST7789V_CMD_WRMEMC    (0x3C) /* Write Memory Continue */
+#define ST7789V_CMD_RDMEMC    (0x3E) /* Read Memory Continue */
+#define ST7789V_CMD_STE       (0x44) /* Set Tear Scanline */
+#define ST7789V_CMD_GSCAN     (0x45) /* Get Scanline */
+#define ST7789V_CMD_WRDISBV   (0x51) /* Write Display Brightness */
+#define ST7789V_CMD_RDDISBV   (0x52) /* Read Display Brightness Value */
+#define ST7789V_CMD_WRCTRLD   (0x53) /* Write CTRL Display */
+#define ST7789V_CMD_RDCTRLD   (0x54) /* Read CTRL Value Display */
+#define ST7789V_CMD_WRCACE    (0x55) /* Wr. Content Adaptive Brightness Control & Color Enhance */
+#define ST7789V_CMD_RDCABC    (0x56) /* Read Content Adaptive Brightness Control */
+#define ST7789V_CMD_WRCABCMB  (0x5E) /* Write CABC Minimum Brightness */
+#define ST7789V_CMD_RDCABCMB  (0x5F) /* Read CABC Minimum Brightness */
+#define ST7789V_CMD_RDABCSDR  (0x68) /* Read Automatic Brightness Control Self-Diagnostic Result */
+#define ST7789V_CMD_RDID1     (0xDA) /* Read ID1 */
+#define ST7789V_CMD_RDID2     (0xDB) /* Read ID2 */
+#define ST7789V_CMD_RDID3     (0xDC) /* Read ID3 */
+#define ST7789V_CMD_RAMCTRL   (0xB0) /* RAM Control */
+#define ST7789V_CMD_RGBCTRL   (0xB1) /* RGB Interface Control */
+#define ST7789V_CMD_PORCTRL   (0xB2) /* Porch Setting */
+#define ST7789V_CMD_FRCTRL1   (0xB3) /* Frame Rate Control 1 (In partial mode/ idle colors) */
+#define ST7789V_CMD_PARCTRL   (0xB5) /* Partial mode Control */
+#define ST7789V_CMD_GCTRL     (0xB7) /* Gate Control */
+#define ST7789V_CMD_GTADJ     (0xB8) /* Gate On Timing Adjustment */
+#define ST7789V_CMD_DGMEN     (0xBA) /* Digital Gamma Enable */
+#define ST7789V_CMD_VCOMS     (0xBB) /* VCOMS Setting */
+#define ST7789V_CMD_LCMCTRL   (0xC0) /* LCM Control */
+#define ST7789V_CMD_IDSET     (0xC1) /* ID Code Setting */
+#define ST7789V_CMD_VDVVRHEN  (0xC2) /* VDV and VRH Command Enable */
+#define ST7789V_CMD_VRHS      (0xC3) /* VRH Set */
+#define ST7789V_CMD_VDVS      (0xC4) /* VDV Set */
+#define ST7789V_CMD_VCMOFSET  (0xC5) /* VCOMS Offset Set */
+#define ST7789V_CMD_FRCTRL2   (0xC6) /* Frame Rate Control in Normal Mode */
+#define ST7789V_CMD_CABCCTRL  (0xC7) /* CABC Control */
+#define ST7789V_CMD_REGSEL1   (0xC8) /* Register Value Selection 1 */
+#define ST7789V_CMD_REGSEL2   (0xCA) /* Register Value Selection 2 */
+#define ST7789V_CMD_PWMFRSEL  (0xCC) /* PWM Frequency Selection */
+#define ST7789V_CMD_PWCTRL1   (0xD0) /* Power Control 1 */
+#define ST7789V_CMD_VAPVANEN  (0xD2) /* Enable VAP/VAN signal output */
+#define ST7789V_CMD_CMD2EN    (0xDF) /* Command 2 Enable */
+#define ST7789V_CMD_PVGAMCTRL (0xE0) /* Positive Voltage Gamma Control */
+#define ST7789V_CMD_NVGAMCTRL (0xE1) /* Negative Voltage Gamma Control */
+#define ST7789V_CMD_DGMLUTR   (0xE2) /* Digital Gamma Look-up Table for Red */
+#define ST7789V_CMD_DGMLUTB   (0xE3) /* Digital Gamma Look-up Table for Blue */
+#define ST7789V_CMD_GATECTRL  (0xE4) /* Gate Control */
+#define ST7789V_CMD_SPI2EN    (0xE7) /* SPI2 Enable */
+#define ST7789V_CMD_PWCTRL2   (0xE8) /* Power Control 2 */
+#define ST7789V_CMD_EQCTRL    (0xE9) /* Equalize time control */
+#define ST7789V_CMD_PROMCTRL  (0xEC) /* Program Mode Control */
+#define ST7789V_CMD_PROMEN    (0xFA) /* Program Mode Enable */
+#define ST7789V_CMD_NVMSET    (0xFC) /* NVM Setting */
+#define ST7789V_CMD_PROMACT   (0xFE) /* Program action */
+
+
+//End of defines for ST7789
 #define START_OSC			0x00 //data read at this instruction should be 0x9735 --> use for test connection
 #define DRIV_OUT_CTRL		0x01
 #define DRIV_WAV_CTRL		0x02
@@ -278,6 +368,8 @@ void TFT_Init_IO(void);
 void TFT_9328_Init(void);
 void TFT_9325_Init(void);
 void TFT_9325New_Init(void);
+void TFT_ST7789_New_Init(void);
+
 static void TFT_Set_Port_Read(void);
 static void TFT_Set_Port_Write(void);
 void Send_TFT_RData(unsigned int index, unsigned int data);
@@ -308,5 +400,6 @@ void Write_Text_Bar(unsigned int x, unsigned int y, unsigned int txt_start,unsig
 unsigned int Get_Font_Shape(unsigned char cur_char,unsigned far char * fnt);
 void Get_Font_Size(unsigned char cur_char,unsigned far char * fnt);
 void Write_Cur_Char(unsigned far char * fnt, unsigned int font_color,unsigned int back_color,unsigned char mode);
+
 
 #endif

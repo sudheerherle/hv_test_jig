@@ -8,3 +8,4 @@ void Retrieve_E2_Values();
 void Store_Factory_Values();
 void Store_E2_Signature();
 void Get_HVT_SerialNo();
+void TFT_ST7789_Init();

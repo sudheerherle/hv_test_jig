@@ -23,10 +23,10 @@
 "D:\Others\hv_test_jig\test123\test123\Release\test123.map" 0 0 1303 321 0 5 
 "D:\Others\hv_test_jig\test123\test123\inc\tft.h" 0 0 1452 752 0 6 
 "D:\Others\hv_test_jig\test123\test123\ncrt0.a30" 0 0 1449 627 0 0 
-"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" 0 0 1449 627 0 1 
+"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" -8 -31 1449 627 1 1 
 "D:\Others\hv_test_jig\test123\test123\src\general.c" 78 78 1303 321 0 3 
 "D:\Others\hv_test_jig\test123\test123\src\resetprg.c" 26 26 1277 377 0 8 
-"D:\Others\hv_test_jig\test123\test123\src\tft.c" -8 -31 1449 627 1 2 
+"D:\Others\hv_test_jig\test123\test123\src\tft.c" 0 0 1449 627 0 2 
 [LOADED_PROJECTS]
 "test123" 
 [END]
