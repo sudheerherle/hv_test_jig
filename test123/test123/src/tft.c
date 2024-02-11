@@ -18,124 +18,6 @@ void DelayMs(unsigned long delay)
 	_delay_us(delay)
 }
 
-
-// Initialise port settings etc
-void TFT_Init_IO(void)
-{
-	TFT_RD_PIN = 1;
-	TFT_WR_PIN = 1;   
-	TFT_RS_PIN = 1;   
-	//TFT_RESET_PIN = 1;
-	//TFT_CS_PIN = 0;
-	//TFT_Set_Port_Write();
-	//_Tft_Port_Output;
-	//_Tft_Port_Output()
-	TFT_PORT_DIR = TFT_OUTPUT_DIRECTION;
-}
-
-void Send_TFT_RData(unsigned int index, unsigned int data)
-{
-	TFT_RS_PIN = 0;
-	TFT_DATA_PORT = (unsigned char)index;
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-	TFT_RS_PIN = 1;
-	//TFT_DATA_PORT = (unsigned char)data >> 8;
-	//TFT_WR_PIN = 0;
-	//TFT_WR_PIN = 1;
-	TFT_DATA_PORT = (unsigned char)data;
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-}
-
-void Send_TFT_Command(unsigned int cmd)
-{
-	//TFT_DATA_PORTHI = cmd >> 8;
-	//TFT_DATA_PORTLO = cmd;
-	TFT_RS_PIN = 0;
-	TFT_DATA_PORT = (unsigned char)cmd;
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-	TFT_RS_PIN = 1;
-}
-
-void Send_TFT_CData(unsigned char data)
-{
-	TFT_DATA_PORT = data;
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-}
-
-void Send_TFT_Data(unsigned int data)
-{
-	TFT_DATA_PORT = (unsigned char)(data >> 8);
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-	TFT_DATA_PORT = (unsigned char)data;
-	TFT_WR_PIN = 0;
-	TFT_WR_PIN = 1;
-}
-
-
-void TFT_ST7789_Init(void)
-{
-	TFT_Init_IO();
-    //DelayMs(100);
-	//Send_TFT_Command(0x01);//reset
-    //DelayMs(250);
-	Send_TFT_Command(0x11);			//SLPOUT exit SLEEP mode
-    //DelayMs(500);
-	Delay_In_250uSec(2);//
-	Send_TFT_RData(0x36,0xa8);		//0x80//MADCTL: memory data access control
-	//Send_TFT_RData(0x3A,0x66);	//COLMOD: Interface Pixel format *** I use 262K-colors in 18bit/pixel format when using 8-bit interface to allow 3-bytes per pixel
-	Send_TFT_RData(0x3A,0x55);		//COLMOD: Interface Pixel format  *** I use 65K-colors in 16bit/pixel (5-6-5) format when using 16-bit interface to allow 1-byte per pixel
-	Send_TFT_RData(0xB2,0x0C);		//PORCTRL
-	Send_TFT_CData(0x0C);
-	Send_TFT_CData(0x00);
-	Send_TFT_CData(0x33);
-	Send_TFT_CData(0x33);			//PORCTRL: Porch setting
-	Send_TFT_RData(0xB7,0x35);		//GCTRL: Gate Control
-	Send_TFT_RData(0xBB,0x2B);		//VCOMS: VCOM setting
-	Send_TFT_RData(0xC0,0x2C);		//LCMCTRL: LCM Control
-	Send_TFT_RData(0xC2,0x01);		//VDVVRHEN:
-	Send_TFT_CData(0xFF);			//VDVVRHEN: VDV and VRH Command Enable
-	Send_TFT_RData(0xC3,0x11);		//VRHS: VRH Set
-	Send_TFT_RData(0xC4,0x20);		//VDVS: VDV Set
-	Send_TFT_RData(0xC6,0x0F);		//FRCTRL2: Frame Rate control in normal mode
-	Send_TFT_RData(0xD0,0xA4);		//PWCTRL1:
-	Send_TFT_CData(0xA1);			//PWCTRL1: Power Control 1
-	Send_TFT_RData(0xE0,0xD0);		//PVGAMCTRL:
-	Send_TFT_CData(0x00);
-	Send_TFT_CData(0x05);
-	Send_TFT_CData(0x0E);
-	Send_TFT_CData(0x15);
-	Send_TFT_CData(0x0D);
-	Send_TFT_CData(0x37);
-	Send_TFT_CData(0x43);
-	Send_TFT_CData(0x47);
-	Send_TFT_CData(0x09);
-	Send_TFT_CData(0x15);
-	Send_TFT_CData(0x12);
-	Send_TFT_CData(0x16);
-	Send_TFT_CData(0x19);			//PVGAMCTRL: Positive Voltage Gamma control	
-	Send_TFT_RData(0xE1,0xD0);		//NVGAMCTRL: 
-	Send_TFT_CData(0x00);
-	Send_TFT_CData(0x05);
-	Send_TFT_CData(0x0D);
-	Send_TFT_CData(0x0C);
-	Send_TFT_CData(0x06);
-	Send_TFT_CData(0x2D);
-	Send_TFT_CData(0x44);
-	Send_TFT_CData(0x40);
-	Send_TFT_CData(0x0E);
-	Send_TFT_CData(0x1C);
-	Send_TFT_CData(0x18);
-	Send_TFT_CData(0x16);
-	Send_TFT_CData(0x19);			//NVGAMCTRL: Negative Voltage Gamma control
-    Send_TFT_Command(0x29);			//DISPON
-	//Clear_Device();
-	Clear_Full_Window();
-}
 // Initialise port settings etc
 void TFT_Init_IO(void)
 {
@@ -224,6 +106,20 @@ void Send_TFT_Data(unsigned int data)
 	WR = 1;
 }
 
+unsigned int Read_TFT_Data1()
+{
+	unsigned int data;
+	TFT_Set_Port_Read();
+	RD = 1;
+	RD = 0;
+	RD = 1;
+	data = TFT_DATA_PORTHI;
+	data = data << 8;
+	data |= TFT_DATA_PORTLO;	
+	TFT_Set_Port_Write();
+	return (data);
+}
+
 unsigned int Read_TFT_Data()
 {
 	unsigned int data;
@@ -245,96 +141,260 @@ unsigned int Read_TFT_GData(unsigned int index)
 	data =  Read_TFT_Data();
 	return (data);
 }
-
-void TFT_9325New_Init(void)
+void TFT_reset()
 {
-	TFT_Init_IO();
-	//RESET = 1;
-	//RS = 1;
-	//WR = 1;
-	//RD = 1;
-    // Reset controller
-	RESET = 0;
-    DelayMs(200);
-	RESET = 1; // start
-    DelayMs(200);
-	/*** Setup display for ILI9328 driver IC ***/ 
-	/*** Start initial sequence ***/
-	Send_TFT_RData(PIXEL_FORMAT,0x05);
-    Send_TFT_RData(INT_TIMING_CTRL1,0x3008);		//set internal timing
-	Send_TFT_RData(INT_TIMING_CTRL2,0x0012);
-	Send_TFT_RData(INT_TIMING_CTRL3,0x1231);
-    Send_TFT_RData(START_OSC,0x0001);				//start osc
+	RESET = 1;
 	DelayMs(50);
-	//Send_TFT_RData(DRIV_OUT_CTRL,0x0100);			//set SS and SM bit
-	Send_TFT_RData(DRIV_OUT_CTRL,0x0100);			//set SS and SM bit
-	Send_TFT_RData(DRIV_WAV_CTRL,0x0700);			//set 1 line inversion
-	Send_TFT_RData(ENTRY_MOD,VAL_ENTRY_MOD);		//set GRAM write direction and BGR=1
-	Send_TFT_RData(RESIZE_CTRL,0x0000);				//resize register
-	Send_TFT_RData(DISP_CTRL2,0x0202);				//set the back porch and front porch
-	Send_TFT_RData(DISP_CTRL3,0x0000);				//set non-display area refresh cycle ISC[3:0]
-	Send_TFT_RData(DISP_CTRL4,0x0000);				//FMARK function
-	Send_TFT_RData(RGB_DISP_IF_CTRL1,0x0000);		//RGB interface setting
-	Send_TFT_RData(FRM_MARKER_POS,0x0000);			//Frame marker Position
-	Send_TFT_RData(RGB_DISP_IF_CTRL2,0x0000);		//RGB interface Polarity
-	DelayMs(200);
-	/*** Power On sequence ***/
-	Send_TFT_RData(POW_CTRL1,0x0000);				//SAP, BT[3:0], AP, DSTB, SLP, STB
-	Send_TFT_RData(POW_CTRL2,0x0007);				//DC1[2:0], DC0[2:0], VC[2:0]
-	Send_TFT_RData(POW_CTRL3,0x0000);				//VREG1OUT voltage
-	Send_TFT_RData(POW_CTRL4,0x0000);				//VDV[4:0] for VCOM amplitude, discharge capacitor power voltage
-	DelayMs(200);
-	Send_TFT_RData(POW_CTRL1,0x1690);		
-	Send_TFT_RData(POW_CTRL2,0x0227);				//0x0220);
-	DelayMs(50);
-	Send_TFT_RData(POW_CTRL3,0x001A);				//0x0091);		
-	DelayMs(50);
-	Send_TFT_RData(POW_CTRL4,0x1800);				//0x1700);		//Set VDV[4:0] for VCOM amplitude
-	Send_TFT_RData(POW_CTRL7,0x002A);				//0x001A);		//Set VCM[5:0]
-	DelayMs(50);
-	Send_TFT_RData(FRM_RATE_COL_CTRL,0x000B);		//Set frame rate
-	DelayMs(50);
-	Send_TFT_RData(GRAM_HOR_AD,0x0000);				//set GRAM horizontal address
-	Send_TFT_RData(GRAM_VER_AD,0x0000);				//set GRAM vertical address
-	/*** adjust gamma curve ***/
-	Send_TFT_RData(GAMMA_CTRL1,0x0007);
-	Send_TFT_RData(GAMMA_CTRL2,0x0605);				//0x0507);
-	Send_TFT_RData(GAMMA_CTRL3,0x0106);				//0x0006);
-	Send_TFT_RData(GAMMA_CTRL4,0x0206);				//0x0001);
-	Send_TFT_RData(GAMMA_CTRL5,0x0808);				//0x0709);	
-	Send_TFT_RData(GAMMA_CTRL6,0x0007);				//0x0104);
-	Send_TFT_RData(GAMMA_CTRL7,0x0201);				//0x0502);
-	Send_TFT_RData(GAMMA_CTRL8,0x0007);				//0x0706);
-	Send_TFT_RData(GAMMA_CTRL9,0x0602);				//0x0500);
-	Send_TFT_RData(GAMMA_CTRL10,0x0808);			//0x000C);
-	/*** Set GRAM area ***/
-    Send_TFT_RData(HOR_START_AD,0x0000);			//Horizontal Address Start Position
-    Send_TFT_RData(HOR_END_AD,0x00EF);           	//Horizontal Address end Position (239)
-    Send_TFT_RData(VER_START_AD,0x0000);           	//Vertical Address Start Position
-    Send_TFT_RData(VER_END_AD,0x013F);           	//Vertical Address end Position (319)
-	Send_TFT_RData(GATE_SCAN_CTRL1,XY_POS_START);//0x2700);//0xA700);			//Gate scan line
-	Send_TFT_RData(GATE_SCAN_CTRL2,0x0001);			//NDL,VLE,REV
-	Send_TFT_RData(GATE_SCAN_CTRL3,0x0000);			//set scrolling line
-	/*** Partial Display Control***/
-	Send_TFT_RData(PART_IMG1_DISP_POS,0x0000);
-	Send_TFT_RData(PART_IMG1_START_AD,0x0000);
-	Send_TFT_RData(PART_IMG1_END_AD,0x0000);
-	Send_TFT_RData(PART_IMG2_DISP_POS,0x0000);
-	Send_TFT_RData(PART_IMG2_START_AD,0x0000);
-	Send_TFT_RData(PART_IMG2_END_AD,0x0000);
-	/*** Panel control ***/
-	Send_TFT_RData(PANEL_IF_CTRL1,0x0010);
-	Send_TFT_RData(PANEL_IF_CTRL2,0x0000);
-	Send_TFT_RData(PANEL_IF_CTRL3,0x0003);
-	Send_TFT_RData(PANEL_IF_CTRL4,0x0110);
-	Send_TFT_RData(PANEL_IF_CTRL5,0x0000);
-	Send_TFT_RData(PANEL_IF_CTRL6,0x0000);
-	Send_TFT_RData(DISP_CTRL1,0x0133);				//0x0173);
-	Send_TFT_RData(DISP_CTRL1,0x0133);				//0x0173);
-	Send_TFT_RData(DISP_CTRL1,0x0133);				//0x0173);
-	Clear_Device(WHITE);
+    RESET = 0;
+    DelayMs(50);
+    RESET = 1;
+    DelayMs(50);
 }
 
+void TFT_9341New_Init(void)
+{
+	TFT_reset();
+	
+    Send_TFT_Command(ILI9341_RESET);
+    DelayMs(200);
+    Read_TFT_RData(ILI9341_READ_DISPLAY_IDENTIFICATION_INFORMATION);
+    Send_TFT_Command(ILI9341_DISPLAY_OFF);
+
+    Send_TFT_Command(ILI9341_POWERA);
+    Send_TFT_Data(0x39);
+    Send_TFT_Data(0x2C);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x34);
+    Send_TFT_Data(0x02);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_POWERB);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x81);
+    Send_TFT_Data(0x30);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_DTCA);
+    Send_TFT_Data(0x84);
+    Send_TFT_Data(0x11);
+    Send_TFT_Data(0x7A);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_DTCB);
+    Send_TFT_Data(0x66);
+    Send_TFT_Data(0x00);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_POWER_SEQ);
+    Send_TFT_Data(0x55);
+    Send_TFT_Data(0x01);
+    Send_TFT_Data(0x23);
+    Send_TFT_Data(0x01);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_PRC);
+    Send_TFT_Data(0x10);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_POWER1);
+    Send_TFT_Data(0x21);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_POWER2);
+    Send_TFT_Data(0x10);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_VCOM1);
+    Send_TFT_Data(0x31);
+    Send_TFT_Data(0x3C);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_VCOM2);
+    Send_TFT_Data(0xc0);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_MAC);
+    Send_TFT_Data(0x00);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_PIXEL_FORMAT);
+    Send_TFT_Data(0x55);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_FRC);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x1b);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_DFC);
+    Send_TFT_Data(0x0a);
+    Send_TFT_Data(0x82);
+    Send_TFT_Data(0x27);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_3GAMMA_EN);
+    Send_TFT_Data(0x00);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_COLUMN_ADDR);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0xEF);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_PAGE_ADDR);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x01);
+    Send_TFT_Data(0x3F);
+DelayMs(50);
+    Send_TFT_Command(ILI9341_GAMMA);
+    Send_TFT_Data(0x01);
+DelayMs(50);
+
+    Send_TFT_Command(ILI9341_PGAMMA);
+    Send_TFT_Data(0x0F);
+    Send_TFT_Data(0x31);
+    Send_TFT_Data(0x2B);
+    Send_TFT_Data(0x0C);
+    Send_TFT_Data(0x0E);
+    Send_TFT_Data(0x08);
+    Send_TFT_Data(0x4E);
+    Send_TFT_Data(0xF1);
+    Send_TFT_Data(0x37);
+    Send_TFT_Data(0x07);
+    Send_TFT_Data(0x10);
+    Send_TFT_Data(0x03);
+    Send_TFT_Data(0x0E);
+    Send_TFT_Data(0x09);
+    Send_TFT_Data(0x00);
+DelayMs(200);
+    Send_TFT_Command(ILI9341_NGAMMA);
+    Send_TFT_Data(0x00);
+    Send_TFT_Data(0x0E);
+    Send_TFT_Data(0x14);
+    Send_TFT_Data(0x03);
+    Send_TFT_Data(0x11);
+    Send_TFT_Data(0x07);
+    Send_TFT_Data(0x31);
+    Send_TFT_Data(0xC1);
+    Send_TFT_Data(0x48);
+    Send_TFT_Data(0x08);
+    Send_TFT_Data(0x0F);
+    Send_TFT_Data(0x0C);
+    Send_TFT_Data(0x31);
+    Send_TFT_Data(0x36);
+    Send_TFT_Data(0x0F);
+DelayMs(200);
+	
+	
+    Send_TFT_Command(ILI9341_SLEEP_OUT);
+    DelayMs(50);
+	Send_TFT_Command(0x21);
+    Send_TFT_Command(ILI9341_DISPLAY_ON);
+//    Send_TFT_Command(ILI9341_GRAM);	
+	Clear_Device_ILI9341(RED);
+	DelayMs(50);
+	Clear_Device_ILI9341(WHITE);
+
+}
+
+void Read_Driver_Info(){
+	unsigned int data1,data2,data3,data4;
+	Send_TFT_Command(0x04);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	data3 = Read_TFT_Data1();
+	data4 = Read_TFT_Data1();
+	
+	Send_TFT_Command(0x09);
+	data1 = Read_TFT_Data1();
+	data2 = Read_TFT_Data1();
+	data3 = Read_TFT_Data1();
+	data4 = Read_TFT_Data1();
+	
+}
+
+/*
+void Send_TFT_RData(unsigned int index, unsigned int data)
+{
+	TFT_RS_PIN = 0;
+	TFT_DATA_PORT = (unsigned char)index;
+	TFT_WR_PIN = 0;
+	TFT_WR_PIN = 1;
+	TFT_RS_PIN = 1;
+	//TFT_DATA_PORT = (unsigned char)data >> 8;
+	//TFT_WR_PIN = 0;
+	//TFT_WR_PIN = 1;
+	TFT_DATA_PORT = (unsigned char)data;
+	TFT_WR_PIN = 0;
+	TFT_WR_PIN = 1;
+}
+
+
+void Send_TFT_Command(unsigned int cmd)
+{
+	//TFT_DATA_PORTHI = cmd >> 8;
+	//TFT_DATA_PORTLO = cmd;
+	TFT_RS_PIN = 0;
+	TFT_DATA_PORT = (unsigned char)cmd;
+	TFT_WR_PIN = 0;
+	TFT_WR_PIN = 1;
+	TFT_RS_PIN = 1;
+}
+
+void Send_TFT_CData(unsigned char data)
+{
+	TFT_DATA_PORT = data;
+	TFT_WR_PIN = 0;
+	TFT_WR_PIN = 1;
+}
+
+void TFT_ST7789_Init(void)
+{
+	TFT_Init_IO();
+    //DelayMs(100);
+	//Send_TFT_Command(0x01);//reset
+    //DelayMs(250);
+	Send_TFT_Command(0x11);			//SLPOUT exit SLEEP mode
+    //DelayMs(500);
+	Delay_In_250uSec(2);//
+	Send_TFT_RData(0x36,0xa8);		//0x80//MADCTL: memory data access control
+	//Send_TFT_RData(0x3A,0x66);	//COLMOD: Interface Pixel format *** I use 262K-colors in 18bit/pixel format when using 8-bit interface to allow 3-bytes per pixel
+	Send_TFT_RData(0x3A,0x55);		//COLMOD: Interface Pixel format  *** I use 65K-colors in 16bit/pixel (5-6-5) format when using 16-bit interface to allow 1-byte per pixel
+	Send_TFT_RData(0xB2,0x0C);		//PORCTRL
+	Send_TFT_CData(0x0C);
+	Send_TFT_CData(0x00);
+	Send_TFT_CData(0x33);
+	Send_TFT_CData(0x33);			//PORCTRL: Porch setting
+	Send_TFT_RData(0xB7,0x35);		//GCTRL: Gate Control
+	Send_TFT_RData(0xBB,0x2B);		//VCOMS: VCOM setting
+	Send_TFT_RData(0xC0,0x2C);		//LCMCTRL: LCM Control
+	Send_TFT_RData(0xC2,0x01);		//VDVVRHEN:
+	Send_TFT_CData(0xFF);			//VDVVRHEN: VDV and VRH Command Enable
+	Send_TFT_RData(0xC3,0x11);		//VRHS: VRH Set
+	Send_TFT_RData(0xC4,0x20);		//VDVS: VDV Set
+	Send_TFT_RData(0xC6,0x0F);		//FRCTRL2: Frame Rate control in normal mode
+	Send_TFT_RData(0xD0,0xA4);		//PWCTRL1:
+	Send_TFT_CData(0xA1);			//PWCTRL1: Power Control 1
+	Send_TFT_RData(0xE0,0xD0);		//PVGAMCTRL:
+	Send_TFT_CData(0x00);
+	Send_TFT_CData(0x05);
+	Send_TFT_CData(0x0E);
+	Send_TFT_CData(0x15);
+	Send_TFT_CData(0x0D);
+	Send_TFT_CData(0x37);
+	Send_TFT_CData(0x43);
+	Send_TFT_CData(0x47);
+	Send_TFT_CData(0x09);
+	Send_TFT_CData(0x15);
+	Send_TFT_CData(0x12);
+	Send_TFT_CData(0x16);
+	Send_TFT_CData(0x19);			//PVGAMCTRL: Positive Voltage Gamma control	
+	Send_TFT_RData(0xE1,0xD0);		//NVGAMCTRL: 
+	Send_TFT_CData(0x00);
+	Send_TFT_CData(0x05);
+	Send_TFT_CData(0x0D);
+	Send_TFT_CData(0x0C);
+	Send_TFT_CData(0x06);
+	Send_TFT_CData(0x2D);
+	Send_TFT_CData(0x44);
+	Send_TFT_CData(0x40);
+	Send_TFT_CData(0x0E);
+	Send_TFT_CData(0x1C);
+	Send_TFT_CData(0x18);
+	Send_TFT_CData(0x16);
+	Send_TFT_CData(0x19);			//NVGAMCTRL: Negative Voltage Gamma control
+    Send_TFT_Command(0x29);			//DISPON
+	//Clear_Device();
+	Clear_Full_Window();
+}
+*/
 void Set_GRAM_Add(signed int x, signed int y)
 {
 /*#ifdef TFT_ORN_PORTRAIT
@@ -501,6 +561,46 @@ void Reset_Window_Add()
 	WR = 1;
 }
 
+void Clear_Device_ILI9341(unsigned int clear_color)
+{
+	unsigned long counter;
+	/*unsigned long coord;
+	coord = (unsigned long)TFT_SIZE_X * (unsigned long)TFT_SIZE_Y;
+	Set_GRAM_Add(0,0);
+	//Send_TFT_Command(RW_GRAM);
+    for(counter = 0;counter < coord;counter++)
+	{
+		Send_TFT_Data(clear_color);
+    }*/
+
+	TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTLO =  ILI9341_COLUMN_ADDR; //GRAM_HOR_AD; 
+	TFT_CONTROL_PORT &= 0xf9;
+	TFT_CONTROL_PORT |= 0x06;
+	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTLO = 0;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTLO = ILI9341_PAGE_ADDR; //GRAM_VER_AD
+	TFT_CONTROL_PORT &= 0xf9;
+	TFT_CONTROL_PORT |= 0x06;
+	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTLO = 0;
+	WR = 0;
+	WR = 1;
+	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTLO = ILI9341_GRAM; //RW_GRAM
+	TFT_CONTROL_PORT &= 0xf9;
+	TFT_CONTROL_PORT |= 0x06;
+    for(counter = 0;counter < (unsigned long)FULL_SCREEN_SIZE;counter++)
+	{
+		TFT_DATA_PORTHI = clear_color >> 8;
+		TFT_DATA_PORTLO = clear_color;
+		WR = 0;
+		WR = 1;
+    }
+}
 /*********************************************************************
 * Function: 		void ClearDevice(void)
 * PreCondition: 	none
@@ -523,7 +623,7 @@ void Clear_Device(unsigned int clear_color)
     }*/
 
 	TFT_DATA_PORTHI = 0;
-	TFT_DATA_PORTLO = GRAM_HOR_AD;
+	TFT_DATA_PORTLO =  GRAM_HOR_AD; 
 	TFT_CONTROL_PORT &= 0xf9;
 	TFT_CONTROL_PORT |= 0x06;
 	//TFT_DATA_PORTHI = 0;
