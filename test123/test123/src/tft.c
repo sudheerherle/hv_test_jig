@@ -434,35 +434,6 @@ void Clear_Device_ST7789(unsigned int clear_color)
 		WR = 1;
     }
 }
-/*********************************************************************
-* Function: 		void ClearDevice(void)
-* PreCondition: 	none
-* Input: 			none
-* Output: 			none
-* Side Effects: 	none
-* Overview: 		clears screen with current color 
-* Note: 			none
-********************************************************************/
-void Clear_Device(unsigned int clear_color)
-{
-	unsigned long counter;
-	/*unsigned long coord;
-	coord = (unsigned long)TFT_SIZE_X * (unsigned long)TFT_SIZE_Y;
-	Set_GRAM_Add(0,0);
-	//Send_TFT_Command(RW_GRAM);
-    for(counter = 0;counter < coord;counter++)
-	{
-		Send_TFT_Data(clear_color);
-    }*/
-Set_Window_Add(0,0xef,0,0x13f);
-    for(counter = 0;counter < (unsigned long)FULL_SCREEN_SIZE;counter++)
-	{
-		TFT_DATA_PORTHI = clear_color >> 8;
-		TFT_DATA_PORTLO = clear_color;
-		WR = 0;
-		WR = 1;
-    }
-}
 
 void Clear_Window(unsigned int x,unsigned int y,unsigned int w,unsigned int h,unsigned int clear_color)
 {
@@ -513,6 +484,8 @@ void Draw_Straight_Line(int start_x,int start_y,int end_x,int end_y,unsigned int
 	{
 		//Send_TFT_Data(line_color);
 		TFT_DATA_PORTHI = line_color >> 8;
+		WR = 0;
+		WR = 1;
 		TFT_DATA_PORTLO = line_color;
 		WR = 0;
 		WR = 1;
