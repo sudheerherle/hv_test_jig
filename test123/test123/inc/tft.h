@@ -25,85 +25,6 @@
 // |________________|
 //
 
-#define ILI9341_NOP                                                                      0x00
-#define ILI9341_RESET                                                                    0x01
-#define ILI9341_READ_DISPLAY_IDENTIFICATION_INFORMATION                                  0x04
-#define ILI9341_READ_DISPLAY_STATUS                                                      0x09
-#define ILI9341_READ_DISPLAY_POWER_MODE                                                  0x0A
-#define ILI9341_READ_DISPLAY_MADCTL                                                      0x0B
-#define ILI9341_READ_DISPLAY_PIXEL_FORMAT                                                0x0C
-#define ILI9341_READ_DISPLAY_IMAGE_FORMAT                                                0x0D
-#define ILI9341_READ_DISPLAY_SIGNAL_MODE                                                 0x0E
-#define ILI9341_READ_DISPLAY_SELF_DIAGNOSTIC_RESULT                                      0x0F
-#define ILI9341_ENTER_SLEEP_MODE                                                         0x10
-#define ILI9341_SLEEP_OUT                                                                0x11
-#define ILI9341_PARTIAL_MODE_ON                                                          0x12
-#define ILI9341_NORMAL_DISPLAY_MODE_ON                                                   0x13
-#define ILI9341_DISPLAY_INVERSION_OFF                                                    0x20
-#define ILI9341_DISPLAY_INVERSION_ON                                                     0x21
-#define ILI9341_GAMMA                                                                    0x26
-#define ILI9341_DISPLAY_OFF                                                              0x28
-#define ILI9341_DISPLAY_ON                                                               0x29
-#define ILI9341_COLUMN_ADDR                                                              0x2A
-#define ILI9341_PAGE_ADDR                                                                0x2B
-#define ILI9341_GRAM                                                                     0x2C
-#define ILI9341_COLOR_SET                                                                0x2D
-#define ILI9341_MEMORY_READ                                                              0x2E
-#define ILI9341_PARTIAL_AREA                                                             0x30
-#define ILI9341_VERTICAL_SCROLLING_DEFINITION                                            0x33
-#define ILI9341_TEARING_EFFECT_LINE_OFF                                                  0x34
-#define ILI9341_TEARING_EFFECT_LINE_ON                                                   0x35
-#define ILI9341_MAC                                                                      0x36
-#define ILI9341_VERTICAL_SCROLLING_START_ADDRESS                                         0x37
-#define ILI9341_IDLE_MODE_OFF                                                            0x38
-#define ILI9341_IDLE_MODE_ON                                                             0x39
-#define ILI9341_PIXEL_FORMAT                                                             0x3A
-#define ILI9341_WMC                                                                      0x3C
-#define ILI9341_RMC                                                                      0x3E
-#define ILI9341_SET_TEAR_SCANLINE                                                        0x44
-#define ILI9341_WDB                                                                      0x51
-#define ILI9341_READ_DISPLAY_BRIGHTNESS                                                  0x52
-#define ILI9341_WCD                                                                      0x53
-#define ILI9341_READ_CTRL_DISPLAY                                                        0x54
-#define ILI9341_WCABC                                                                    0x55
-#define ILI9341_RCABC                                                                    0x56
-#define ILI9341_WCABCMB                                                                  0x5E
-#define ILI9341_RCABCMB                                                                  0x5F
-#define ILI9341_RGB_INTERFACE                                                            0xB0
-#define ILI9341_FRC                                                                      0xB1
-#define ILI9341_FRAME_CTRL_NM                                                            0xB2
-#define ILI9341_FRAME_CTRL_IM                                                            0xB3
-#define ILI9341_FRAME_CTRL_PM                                                            0xB4
-#define ILI9341_BPC                                                                      0xB5
-#define ILI9341_DFC                                                                      0xB6
-#define ILI9341_ENTRY_MODE_SET                                                           0xB7
-#define ILI9341_BACKLIGHT_CONTROL_1                                                      0xB8
-#define ILI9341_BACKLIGHT_CONTROL_2                                                      0xB9
-#define ILI9341_BACKLIGHT_CONTROL_3                                                      0xBA
-#define ILI9341_BACKLIGHT_CONTROL_4                                                      0xBB
-#define ILI9341_BACKLIGHT_CONTROL_5                                                      0xBC
-#define ILI9341_BACKLIGHT_CONTROL_6                                                      0xBD
-#define ILI9341_BACKLIGHT_CONTROL_7                                                      0xBE
-#define ILI9341_BACKLIGHT_CONTROL_8                                                      0xBF
-#define ILI9341_POWER1                                                                   0xC0
-#define ILI9341_POWER2                                                                   0xC1
-#define ILI9341_VCOM1                                                                    0xC5
-#define ILI9341_VCOM2                                                                    0xC7
-#define ILI9341_POWERA                                                                   0xCB
-#define ILI9341_POWERB                                                                   0xCF
-#define ILI9341_READ_ID1                                                                 0xDA
-#define ILI9341_READ_ID2                                                                 0xDB
-#define ILI9341_READ_ID3                                                                 0xDC
-#define ILI9341_PGAMMA                                                                   0xE0
-#define ILI9341_NGAMMA                                                                   0xE1
-#define ILI9341_DTCA                                                                     0xE8
-#define ILI9341_DTCB                                                                     0xEA
-#define ILI9341_POWER_SEQ                                                                0xED
-#define ILI9341_3GAMMA_EN                                                                0xF2
-#define ILI9341_INTERFACE                                                                0xF6
-#define ILI9341_PRC                                                                      0xF7
-
-
 
 //ST7789
 
@@ -193,67 +114,14 @@
 
 
 //End of defines for ST7789
-#define START_OSC			0x00 //data read at this instruction should be 0x9735 --> use for test connection
-#define DRIV_OUT_CTRL		0x01
-#define DRIV_WAV_CTRL		0x02
-#define ENTRY_MOD			0x03
-#define RESIZE_CTRL			0x04
-#define DISP_CTRL1			0x07
-#define DISP_CTRL2			0x08
-#define DISP_CTRL3			0x09
-#define DISP_CTRL4			0x0A
-#define RGB_DISP_IF_CTRL1	0x0C
-#define FRM_MARKER_POS		0x0D
-#define RGB_DISP_IF_CTRL2	0x0F
-#define POW_CTRL1			0x10
-#define POW_CTRL2			0x11
-#define POW_CTRL3			0x12
-#define POW_CTRL4			0x13
-#define GRAM_HOR_AD			0x20
-#define GRAM_VER_AD			0x21
-#define RW_GRAM				0x22
-#define POW_CTRL7			0x29
-#define FRM_RATE_COL_CTRL	0x2B
-#define GAMMA_CTRL1			0x30
-#define GAMMA_CTRL2			0x31
-#define GAMMA_CTRL3			0x32
-#define GAMMA_CTRL4			0x35 
-#define GAMMA_CTRL5			0x36
-#define GAMMA_CTRL6			0x37
-#define GAMMA_CTRL7			0x38
-#define GAMMA_CTRL8			0x39
-#define PIXEL_FORMAT		0x3A
-#define GAMMA_CTRL9			0x3C
-#define GAMMA_CTRL10		0x3D
-#define HOR_START_AD		0x50
-#define HOR_END_AD			0x51
-#define VER_START_AD		0x52
-#define VER_END_AD			0x53
-#define GATE_SCAN_CTRL1		0x60
-#define GATE_SCAN_CTRL2		0x61
-#define GATE_SCAN_CTRL3		0x6A
-#define PART_IMG1_DISP_POS	0x80
-#define PART_IMG1_START_AD	0x81
-#define PART_IMG1_END_AD	0x82
-#define PART_IMG2_DISP_POS	0x83
-#define PART_IMG2_START_AD	0x84
-#define PART_IMG2_END_AD	0x85
-#define PANEL_IF_CTRL1		0x90
-#define PANEL_IF_CTRL2		0x92
-#define PANEL_IF_CTRL3		0x93
-#define PANEL_IF_CTRL4		0x95
-#define PANEL_IF_CTRL5		0x97
-#define PANEL_IF_CTRL6		0x98
-#define INT_TIMING_CTRL1	0xE3
-#define INT_TIMING_CTRL2	0xE7
-#define INT_TIMING_CTRL3	0xEF
 
 //touch screen LCD configuration
 //#define TFT_ORN_PORTRAIT
 
-#ifdef TFT_ORN_PORTRAIT
-#define TFT_SIZE_X			240
-#define TFT_SIZE_Y			320
+
+#define TFT_SIZE_X			320//240
+#define TFT_SIZE_Y			240//320
+/*
 #define VAL_ENTRY_MOD		0x0030//0x0030
 #define BAR_MODE			0x0000
 #define XY_POS_START		0xA700
@@ -263,10 +131,10 @@
 #define END_ADY   			VER_END_AD
 #define GRAM_ADX			GRAM_HOR_AD
 #define GRAM_ADY			GRAM_VER_AD
-#define MAX_TRXN_LINES		13
-#else
-#define TFT_SIZE_X			320
-#define TFT_SIZE_Y			240
+#define MAX_TRXN_LINES		13*/
+/*#else
+#define TFT_SIZE_X			240//320
+#define TFT_SIZE_Y			320//240
 #define VAL_ENTRY_MOD		0x0038//0x0028
 #define BAR_MODE			0x0008
 #define XY_POS_START		0x2700
@@ -278,6 +146,7 @@
 #define GRAM_ADY			GRAM_HOR_AD
 #define MAX_TRXN_LINES		8
 #endif
+*/
 
 //**** CPU SPEED IN Hz (MIP Rating) ****
 #define F_CPU 				40000000    /* renesas internal clock max speed */
@@ -365,11 +234,7 @@ typedef enum
 
 void DelayMs(unsigned long delay);
 void TFT_Init_IO(void);
-void TFT_9328_Init(void);
-void TFT_9325_Init(void);
-void TFT_9325New_Init(void);
 void TFT_ST7789_New_Init(void);
-
 static void TFT_Set_Port_Read(void);
 static void TFT_Set_Port_Write(void);
 void Send_TFT_RData(unsigned int index, unsigned int data);
@@ -378,11 +243,10 @@ void Send_TFT_Command(unsigned int cmd);
 void Send_TFT_Data(unsigned int data);
 unsigned int Read_TFT_Data();
 unsigned int Read_TFT_GData(unsigned int index);
-void Set_GRAM_Add(signed int x, signed int y);
 void Set_Window_Add(signed int start_x, signed int end_x, signed int start_y, signed int end_y);
 void Reset_Window_Add();
 void Clear_Device(unsigned int clear_color);
-void Clear_Device_ILI9341(unsigned int clear_color);
+void Clear_Device_ST7789(unsigned int clear_color);
 void Clear_Window(unsigned int x,unsigned int y,unsigned int w,unsigned int h,unsigned int clear_color);
 void Frame_Show(unsigned int * bitmap);
 void Show_Picture(unsigned far int *bitmap, unsigned int x, unsigned int y, unsigned int w, unsigned int h, unsigned char mode, unsigned int bg_color);

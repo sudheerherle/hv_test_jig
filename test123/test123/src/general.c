@@ -15,8 +15,8 @@
 
 void Draw_Main_Window()
 {
-	Reset_Window_Add();
-	Clear_Device(WHITE);
+	//Reset_Window_Add();
+	Clear_Device_ST7789(BLUE);
 	Draw_Window(XL_MARGIN,YU_MARGIN,XR_MARGIN,YL_MARGIN,GRAY6,GRAY0);
 }
 
