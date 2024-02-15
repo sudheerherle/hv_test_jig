@@ -11,109 +11,109 @@ c:\program files (x86)\renesas\hew\tools\renesas\nc30wa\v545r00\bin\ln30.exe @D:
 
 # LINK FILE INFORMATION
 ncrt0 (D:\Others\hv_test_jig\test123\test123\Debug\ncrt0.r30)
-	Feb 13 17:23:26 2024
+	Feb 15 21:14:48 2024
 
 adc (D:\Others\hv_test_jig\test123\test123\Debug\adc.r30)
-	Feb 13 17:24:31 2024
+	Feb 15 21:14:36 2024
 
 bleedertest (D:\Others\hv_test_jig\test123\test123\Debug\bleedertest.r30)
-	Feb 13 17:24:32 2024
+	Feb 15 21:14:36 2024
 
 cctalk (D:\Others\hv_test_jig\test123\test123\Debug\cctalk.r30)
-	Feb 13 17:24:32 2024
+	Feb 15 21:14:37 2024
 
 Copy of font_arialnarrowbold16 (D:\Others\hv_test_jig\test123\test123\Debug\Copy of font_arialnarrowbold16.r30)
-	Feb 13 17:41:57 2024
+	Feb 15 22:20:12 2024
 
 firm (D:\Others\hv_test_jig\test123\test123\Debug\firm.r30)
-	Feb 13 17:23:17 2024
+	Feb 15 21:14:37 2024
 
 font_arialnarrowbold12 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold12.r30)
-	Feb 13 17:23:17 2024
+	Feb 15 21:14:37 2024
 
 font_arialnarrowbold12SI (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold12SI.r30)
-	Feb 13 17:23:17 2024
+	Feb 15 21:14:38 2024
 
 font_arialnarrowbold14 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold14.r30)
-	Feb 13 17:23:18 2024
+	Feb 15 21:14:38 2024
 
 font_arialnarrowbold16 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold16.r30)
-	Feb 13 17:23:18 2024
+	Feb 15 21:14:38 2024
 
 font_arialnarrowbold16SI (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold16SI.r30)
-	Feb 13 17:23:18 2024
+	Feb 15 21:14:38 2024
 
 font_arialnarrowbold18 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold18.r30)
-	Feb 13 17:23:19 2024
+	Feb 15 21:14:39 2024
 
 font_arialnarrowbold20 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold20.r30)
-	Feb 13 17:23:19 2024
+	Feb 15 21:14:39 2024
 
 font_arialnarrowbold20SI (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold20SI.r30)
-	Feb 13 17:23:19 2024
+	Feb 15 21:14:39 2024
 
 font_arialnarrowbold24 (D:\Others\hv_test_jig\test123\test123\Debug\font_arialnarrowbold24.r30)
-	Feb 13 17:23:20 2024
+	Feb 15 21:14:40 2024
 
 font_helvB08 (D:\Others\hv_test_jig\test123\test123\Debug\font_helvB08.r30)
-	Feb 13 17:24:32 2024
+	Feb 15 21:14:40 2024
 
 font_helvB10 (D:\Others\hv_test_jig\test123\test123\Debug\font_helvB10.r30)
-	Feb 13 17:24:33 2024
+	Feb 15 21:14:40 2024
 
 font_helvB12 (D:\Others\hv_test_jig\test123\test123\Debug\font_helvB12.r30)
-	Feb 13 17:24:33 2024
+	Feb 15 21:14:41 2024
 
 font_helvB14 (D:\Others\hv_test_jig\test123\test123\Debug\font_helvB14.r30)
-	Feb 13 17:24:34 2024
+	Feb 15 21:14:41 2024
 
 font_helvB18 (D:\Others\hv_test_jig\test123\test123\Debug\font_helvB18.r30)
-	Feb 13 17:24:34 2024
+	Feb 15 21:14:42 2024
 
 fvector (D:\Others\hv_test_jig\test123\test123\Debug\fvector.r30)
-	Feb 13 17:23:22 2024
+	Feb 15 21:14:42 2024
 
 general (D:\Others\hv_test_jig\test123\test123\Debug\general.r30)
-	Feb 13 17:34:24 2024
+	Feb 15 22:15:41 2024
 
 heap (D:\Others\hv_test_jig\test123\test123\Debug\heap.r30)
-	Feb 13 17:23:22 2024
+	Feb 15 21:14:43 2024
 
 hvtconstants (D:\Others\hv_test_jig\test123\test123\Debug\hvtconstants.r30)
-	Feb 13 17:24:35 2024
+	Feb 15 21:14:44 2024
 
 HVTJ (D:\Others\hv_test_jig\test123\test123\Debug\HVTJ.r30)
-	Feb 13 17:24:31 2024
+	Feb 15 21:14:36 2024
 
 iic (D:\Others\hv_test_jig\test123\test123\Debug\iic.r30)
-	Feb 13 17:24:35 2024
+	Feb 15 21:14:44 2024
 
 init (D:\Others\hv_test_jig\test123\test123\Debug\init.r30)
-	Feb 13 17:24:35 2024
+	Feb 15 21:14:45 2024
 
 initsct (D:\Others\hv_test_jig\test123\test123\Debug\initsct.r30)
-	Feb 13 17:23:24 2024
+	Feb 15 21:14:45 2024
 
 intprg (D:\Others\hv_test_jig\test123\test123\Debug\intprg.r30)
-	Feb 13 17:24:36 2024
+	Feb 15 21:14:45 2024
 
 resetprg (D:\Others\hv_test_jig\test123\test123\Debug\resetprg.r30)
-	Feb 13 17:23:24 2024
+	Feb 15 21:14:46 2024
 
 tanktest (D:\Others\hv_test_jig\test123\test123\Debug\tanktest.r30)
-	Feb 13 17:24:36 2024
+	Feb 15 21:14:46 2024
 
 tft (D:\Others\hv_test_jig\test123\test123\Debug\tft.r30)
-	Feb 13 17:41:58 2024
+	Feb 15 22:20:13 2024
 
 timer (D:\Others\hv_test_jig\test123\test123\Debug\timer.r30)
-	Feb 13 17:24:37 2024
+	Feb 15 21:14:47 2024
 
 transactions (D:\Others\hv_test_jig\test123\test123\Debug\transactions.r30)
-	Feb 13 17:24:37 2024
+	Feb 15 21:14:47 2024
 
 uart (D:\Others\hv_test_jig\test123\test123\Debug\uart.r30)
-	Feb 13 17:24:37 2024
+	Feb 15 21:14:48 2024
 
 _i4divu (c:\program files (x86)\renesas\hew\tools\renesas\nc30wa\v545r00\lib30\nc30lib.lib)
 	Mar 16 11:56:13 2009
@@ -175,23 +175,23 @@ program                          REL CODE    004010 000000 2     ncrt0
                                  REL CODE    004060 000001 2     bleedertest
                                  REL CODE    004062 000147 2     cctalk
                                  REL CODE    0041AA 000005 2     fvector
-                                 REL CODE    0041B0 0007F0 2     general
-                                 REL CODE    0049A0 0003F6 2     HVTJ
+                                 REL CODE    0041B0 0007F4 2     general
+                                 REL CODE    0049A4 0003F2 2     HVTJ
                                  REL CODE    004D96 000345 2     iic
                                  REL CODE    0050DC 000279 2     init
                                  REL CODE    005356 000427 2     intprg
                                  REL CODE    00577E 0014D1 2     tanktest
-                                 REL CODE    006C50 0010B8 2     tft
-                                 REL CODE    007D08 0002E7 2     timer
-                                 REL CODE    007FF0 000715 2     transactions
-                                 REL CODE    008706 000053 2     uart
-                                 REL CODE    00875A 00004D 2     _i4divu
-                                 REL CODE    0087A8 00004B 2     _i4modu
-                                 REL CODE    0087F4 00001C 2     _i4mulu
-interrupt                        REL CODE    008810 000000 2     ncrt0
-                                 REL CODE    008810 00009D       ncrt0
-                                 REL CODE    0088AE 000065 2     initsct
-                                 REL CODE    008914 00002F 2     resetprg
+                                 REL CODE    006C50 001128 2     tft
+                                 REL CODE    007D78 0002E7 2     timer
+                                 REL CODE    008060 000715 2     transactions
+                                 REL CODE    008776 000053 2     uart
+                                 REL CODE    0087CA 00004D 2     _i4divu
+                                 REL CODE    008818 00004B 2     _i4modu
+                                 REL CODE    008864 00001C 2     _i4mulu
+interrupt                        REL CODE    008880 000000 2     ncrt0
+                                 REL CODE    008880 00009D       ncrt0
+                                 REL CODE    00891E 000065 2     initsct
+                                 REL CODE    008984 00002F 2     resetprg
 vector                           ABS ROMDATA 00FEDC 000100       ncrt0
 fvector                          ABS ROMDATA 00FFDC 000024       ncrt0
                                  ABS ROMDATA 010000 000024       fvector
@@ -220,7 +220,7 @@ Sl_No_FO                         REL ROMDATA 01B658 00002B       HVTJ
 # Total -------------------------------------------------------------------
                                      DATA           000756(0001878) Byte(s)
                                      ROMDATA        00B7B7(0047031) Byte(s)
-                                     CODE           004933(0018739) Byte(s)
+                                     CODE           0049A3(0018851) Byte(s)
 
 ##########################################
 # VARIABLE VECTOR TABLE INFORMATION      #
@@ -252,97 +252,96 @@ No.  Address               No.  Address               No.  Address
 ##########################################
 # (3) GLOBAL LABEL INFORMATION           #
 ##########################################
-$Calculate_CCITT   004166  $Calculate_CCTal   004108  $Clear_Device      00729e
-$Clear_Device_ST   0071f8  $Clear_Window      0072e8  $Conv_Data2_Asci   00440e
-$Conv_Data2_Asci   004480  $Conv_Data2_BCD    0043a6  $Delay_Half_Seco   00452a
-$Delay_Seconds_W   004990  $Display_HVTKey_   004542  $Display_Menu_Ba   004be6
-$Draw_Rectangle    007584  $Draw_Straight_L   00736e  $Draw_Window       0075e2
-$Fill_Rect         0073bc  $Get_Font_Shape    007b0e  $Get_Font_Size     007b84
-$Key_Type_Press_   004288  $Poll_For_WriteO   0050a6  $ReadADC           00402c
-$ReadFromi2c       004e46  $ReadN_Average_A   00431a  $Read_TFT_GData    006dca
-$Read_TFT_RData    006d14  $Send_CCTalk_Dat   004062  $Send_CurByte2_U   008744
-$Send_Data2_UART   00871e  $Send_IIC_Byte     005016  $Send_TFT_Comman   006d2c
-$Send_TFT_Data     006d4e  $Send_TFT_RData    006cd8  $Set_Window_Add    007198
-$Store_Data2_Eep   006b44  $Txr_Array_Data    00496c  $Wait4_User_Conf   00471e
-$Write2_DAC_Regi   00468c  $Write2i2c         004d96  $Write_Center_Te   0077c0
-$Write_Center_Te   007846  $Write_Cur_Char    007bca  $Write_Right_Tex   0078d2
-$Write_Right_Tex   007948  $Write_Text        0079c4  $Write_Text_Bar    007a38
-$byteToDWord       007130  $exit              0088aa  _CCITT_CRC_Looku   015b42
-_Check_E2prom_Si   0051a2  _Check_Range       004812  _ChkIICBus         004f7c
-_Chk_First_Key     007de0  _Chk_IIC_BusFree   004fb4  _Chk_Key_Press     007dd6
-_Chk_Second_Key    007ebe  _Chk_Serial_Data   004cb6  _Chk_Third_Key     007fa4
-_Compare_CCTalkD   004136  _DEF_SBREGISTER    000578  _DelayMs           006c50
-_Display_Filamen   0048fe  _Display_Key_Men   0041d4  _Display_Main_Me   004b58
-_Display_Searchi   0046c0  _Display_Updated   004844  _Do_Bleeder_Test   004060
-_Draw_Main_Windo   0041b0  _Get_HVT_SerialN   00530c  _IICClockDelay     004f3c
-_Init_Data_Value   006b02  _InitialiseADC     004010  _Initialise_Osci   0050dc
-_Initialise_Port   005124  _Initialise_Port   0050fc  _Initialise_Time   007d08
-_Initialise_Time   007d1c  _Initialise_Vari   005156  _Main_Options_Me   004acc
-_Read_Driver_Inf   007052  _Read_TFT_Data     006da2  _Read_TFT_Data1    006d68
-_Rec_IIC_Byte      005066  _Reset_Window_Ad   0071d0  _Retrieve_E2_Val   00521e
-_Send_Current_FI   006c16  _Send_Current_HV   006bc8  _Send_NAK_Messag   004d7c
-_Send_Saved_Data   008668  _Set_SCL_As_Inpu   004f70  _Set_SCL_As_Outp   004f64
-_Set_SDA_As_Inpu   004f58  _Set_SDA_As_Outp   004f4c  _Set_UART0_Port    008706
-_Show_All_Transa   007ff0  _SlaveNoAck        004f28  _StartBit          004ef8
-_Start_New_Test    00577e  _Start_Watch_Dog   00518e  _StopBit           004f10
-_Store_E2_Signat   0052d0  _Store_Factory_V   005270  _TFT_Init_IO       006c9a
-_TFT_ST7789_New_   006e1c  _TFT_reset         006de8  _Wait4_UART0_Dat   0040dc
-__ad_converter     00549c  __brk              005356  __capture          005778
-__compare0         005490  __compare1         00538c  __dummy_int        0041aa
-__i4divU           00875a  __i4modU           0087a8  __i4mulU           0087f4
-__input_key        005380  __int0             005496  __int1             00547e
-__int2             005422  __int3             005484  __istack_top       000857
-__memt             000408  __mnext            00057a  __msize            00057e
-__pool             000400  __ssuic            005386  __stack_top        000ad7
-__timer_ra         005428  __timer_rb         005478  __timer_rc         00535c
-__timer_rd0        005362  __timer_rd1        005368  __timer_re         00536e
-__timer_rf         00548a  __uart0_receive    005398  __uart0_trance     005392
-__uart1_receive    00541c  __uart1_trance     005416  __uart2_receive    00537a
-__uart2_trance     005374  _adc_array_ctr     00045a  _adc_avg_ctr       000542
-_adc_read_flag     00059b  _adc_timeout_ctr   00059e  _adc_timeout_fla   00059d
-_anode_hv_text     01b582  _arial_narrow_bo   010024  _arial_narrow_bo   0113ac
-_arial_narrow_bo   011b7a  _arial_narrow_bo   015d42  _arial_narrow_bo   0167c1
-_arial_narrow_bo   012152  _arial_narrow_bo   017448  _arial_narrow_bo   012b22
-_arial_narrow_bo   013e0a  _arial_narrow_bo   01843b  _bleeder_anode_a   00049e
-_bleeder_anode_t   01b5b7  _bleeder_anode_v   00052e  _bleeder_cathode   0004b2
-_bleeder_cathode   01b5c6  _bleeder_cathode   000532  _bleeder_turns_t   01b59e
-_buf_x             000450  _buf_y             000452  _cathode_hv_text   01b58f
-_chr_bit_height    000599  _chr_bit_width     00059a  _company_name      015a82
-_continuous_mode   000585  _cur_font_height   000594  _cur_machine_sta   0005a0
-_dac_info_buffer   000570  _data_read_flag    000592  _data_save_flag    000593
-_discard_adc_fla   00059f  _driverStatus      0005cb  _dummy_add_loc     01b654
-_eeprom_error_co   000591  _exit              0088aa  _fail_text         01b625
-_filament_change   015ada  _filament_input_   0004c6  _filament_input_   015acc
-_filament_input_   000536  _filament_turns_   015ab2  _filnot_connecte   015b22
-_firmware_versio   015a8c  _first_contpress   00041e  _first_key_flag    00058b
-_first_press_fla   00058e  _firstkey_bounce   000418  _firstkey_releas   000588
-_font              000410  _font_helvB08      019e8a  _font_helvB10      014cc6
-_font_helvB12      01a20d  _font_helvB14      01528c  _font_helvB18      01a89a
-_gsc_i2c_retsts    000583  _half_sec_ctr      000414  _half_sec_flag     000582
-_hv_anode_array    00048a  _hv_anode_value    000526  _hv_cathode_arra   000476
-_hv_cathode_valu   00052a  _hv_input_array    000462  _hv_input_flag     00059c
-_hv_input_text     01b56f  _hv_input_value    000522  _hv_turns_text     015a9e
-_hvt_slno_loc      000456  _initsct           0088ae  _key_press_flag    000587
-_key_status_flag   000586  _key_timeout_ctr   000416  _key_timeout_fla   000584
-_large_filament_   01b5d7  _long_filament_a   0004da  _long_filament_v   00053e
-_main              0049a0  _main_menu_text    01b5fd  _main_menu_text1   01b60c
-_max_adc_arrayct   00045e  _max_y             000426  _menu_name_text    015b18
-_min_y             000424  _minus_symbol      015b16  _model_name        01b552
-_mvdc_text         01b61b  _pass_text         01b620  _pc_data_ctr       000596
-_pc_data_recd      000597  _pc_recd_buffer    0005a2  _pc_timeout_ctr    000454
-_pc_timeout_flag   000595  _pending_pcdata_   000598  _plus_symbol       015b14
-_pointer_info_bu   000568  _press_key_text    01b62a  _readbleeder_ano   00050e
-_readbleeder_cat   000512  _readfilament_in   000516  _readhv_anode_va   000506
-_readhv_cathode_   00050a  _readhv_input_va   000502  _readlong_filame   00051e
-_readshort_filam   00051a  _second_contpres   000420  _second_key_flag   00058c
-_second_press_fl   00058f  _secondkey_bounc   00041a  _secondkey_relea   000589
-_shift_machine_s   0005a1  _short_filament_   0004ee  _short_filament_   00053a
-_small_filament_   01b5ea  _start             008914  _temp_disp_array   000428
-_test_data_buffe   000546  _test_failed_tex   015afc  _test_passed_tex   015af0
-_third_key_flag    00058d  _third_press_fla   000590  _thirdkey_bounce   00041c
-_thirdkey_releas   00058a  _vac_text          015b0c  _value_count_loc   000422
-_vdc_text          015b10  _vpk_text          015b08  dummy_int          0088ac
-start              008810  
+$Calculate_CCITT   004166  $Calculate_CCTal   004108  $Clear_Device_ST   0072ba
+$Clear_Window      007360  $Conv_Data2_Asci   004412  $Conv_Data2_Asci   004484
+$Conv_Data2_BCD    0043aa  $Delay_Half_Seco   00452e  $Delay_Seconds_W   004994
+$Display_HVTKey_   004546  $Display_Menu_Ba   004be6  $Draw_Rectangle    007604
+$Draw_Straight_L   0073e6  $Draw_Window       007662  $Fill_Rect         007434
+$Get_Font_Shape    007b8e  $Get_Font_Size     007c04  $Key_Type_Press_   00428c
+$Poll_For_WriteO   0050a6  $ReadADC           00402c  $ReadFromi2c       004e46
+$ReadN_Average_A   00431e  $Read_TFT_GData    006dca  $Read_TFT_RData    006d14
+$Send_CCTalk_Dat   004062  $Send_CurByte2_U   0087b4  $Send_Data2_UART   00878e
+$Send_IIC_Byte     005016  $Send_TFT_Comman   006d2c  $Send_TFT_Data     006d4e
+$Send_TFT_RData    006cd8  $Set_Window_Add    00719c  $Store_Data2_Eep   006b44
+$Txr_Array_Data    004970  $Wait4_User_Conf   004722  $Write2_DAC_Regi   004690
+$Write2i2c         004d96  $Write_Center_Te   007840  $Write_Center_Te   0078c6
+$Write_Cur_Char    007c4a  $Write_Right_Tex   007952  $Write_Right_Tex   0079c8
+$Write_Text        007a44  $Write_Text_Bar    007ab8  $byteToDWord       007134
+$exit              00891a  _CCITT_CRC_Looku   015b42  _Check_E2prom_Si   0051a2
+_Check_Range       004816  _ChkIICBus         004f7c  _Chk_First_Key     007e50
+_Chk_IIC_BusFree   004fb4  _Chk_Key_Press     007e46  _Chk_Second_Key    007f2e
+_Chk_Serial_Data   004cb6  _Chk_Third_Key     008014  _Compare_CCTalkD   004136
+_DEF_SBREGISTER    000578  _DelayMs           006c50  _Display_Filamen   004902
+_Display_Key_Men   0041d8  _Display_Main_Me   004b58  _Display_Searchi   0046c4
+_Display_Updated   004848  _Do_Bleeder_Test   004060  _Draw_Main_Windo   0041b0
+_Get_HVT_SerialN   00530c  _IICClockDelay     004f3c  _Init_Data_Value   006b02
+_InitialiseADC     004010  _Initialise_Osci   0050dc  _Initialise_Port   005124
+_Initialise_Port   0050fc  _Initialise_Time   007d78  _Initialise_Time   007d8c
+_Initialise_Vari   005156  _Main_Options_Me   004acc  _Read_Driver_Inf   007056
+_Read_TFT_Data     006da2  _Read_TFT_Data1    006d68  _Rec_IIC_Byte      005066
+_Reset_Window_Ad   007224  _Retrieve_E2_Val   00521e  _Send_Current_FI   006c16
+_Send_Current_HV   006bc8  _Send_NAK_Messag   004d7c  _Send_Saved_Data   0086d8
+_Set_SCL_As_Inpu   004f70  _Set_SCL_As_Outp   004f64  _Set_SDA_As_Inpu   004f58
+_Set_SDA_As_Outp   004f4c  _Set_UART0_Port    008776  _Show_All_Transa   008060
+_SlaveNoAck        004f28  _StartBit          004ef8  _Start_New_Test    00577e
+_Start_Watch_Dog   00518e  _StopBit           004f10  _Store_E2_Signat   0052d0
+_Store_Factory_V   005270  _TFT_Init_IO       006c9a  _TFT_ST7789_New_   006e1c
+_TFT_reset         006de8  _Wait4_UART0_Dat   0040dc  __ad_converter     00549c
+__brk              005356  __capture          005778  __compare0         005490
+__compare1         00538c  __dummy_int        0041aa  __i4divU           0087ca
+__i4modU           008818  __i4mulU           008864  __input_key        005380
+__int0             005496  __int1             00547e  __int2             005422
+__int3             005484  __istack_top       000857  __memt             000408
+__mnext            00057a  __msize            00057e  __pool             000400
+__ssuic            005386  __stack_top        000ad7  __timer_ra         005428
+__timer_rb         005478  __timer_rc         00535c  __timer_rd0        005362
+__timer_rd1        005368  __timer_re         00536e  __timer_rf         00548a
+__uart0_receive    005398  __uart0_trance     005392  __uart1_receive    00541c
+__uart1_trance     005416  __uart2_receive    00537a  __uart2_trance     005374
+_adc_array_ctr     00045a  _adc_avg_ctr       000542  _adc_read_flag     00059b
+_adc_timeout_ctr   00059e  _adc_timeout_fla   00059d  _anode_hv_text     01b582
+_arial_narrow_bo   010024  _arial_narrow_bo   0113ac  _arial_narrow_bo   011b7a
+_arial_narrow_bo   015d42  _arial_narrow_bo   0167c1  _arial_narrow_bo   012152
+_arial_narrow_bo   017448  _arial_narrow_bo   012b22  _arial_narrow_bo   013e0a
+_arial_narrow_bo   01843b  _bleeder_anode_a   00049e  _bleeder_anode_t   01b5b7
+_bleeder_anode_v   00052e  _bleeder_cathode   0004b2  _bleeder_cathode   01b5c6
+_bleeder_cathode   000532  _bleeder_turns_t   01b59e  _buf_x             000450
+_buf_y             000452  _cathode_hv_text   01b58f  _chr_bit_height    000599
+_chr_bit_width     00059a  _company_name      015a82  _continuous_mode   000585
+_cur_font_height   000594  _cur_machine_sta   0005a0  _dac_info_buffer   000570
+_data_read_flag    000592  _data_save_flag    000593  _discard_adc_fla   00059f
+_driverStatus      0005cb  _dummy_add_loc     01b654  _eeprom_error_co   000591
+_exit              00891a  _fail_text         01b625  _filament_change   015ada
+_filament_input_   0004c6  _filament_input_   015acc  _filament_input_   000536
+_filament_turns_   015ab2  _filnot_connecte   015b22  _firmware_versio   015a8c
+_first_contpress   00041e  _first_key_flag    00058b  _first_press_fla   00058e
+_firstkey_bounce   000418  _firstkey_releas   000588  _font              000410
+_font_helvB08      019e8a  _font_helvB10      014cc6  _font_helvB12      01a20d
+_font_helvB14      01528c  _font_helvB18      01a89a  _gsc_i2c_retsts    000583
+_half_sec_ctr      000414  _half_sec_flag     000582  _hv_anode_array    00048a
+_hv_anode_value    000526  _hv_cathode_arra   000476  _hv_cathode_valu   00052a
+_hv_input_array    000462  _hv_input_flag     00059c  _hv_input_text     01b56f
+_hv_input_value    000522  _hv_turns_text     015a9e  _hvt_slno_loc      000456
+_initsct           00891e  _key_press_flag    000587  _key_status_flag   000586
+_key_timeout_ctr   000416  _key_timeout_fla   000584  _large_filament_   01b5d7
+_long_filament_a   0004da  _long_filament_v   00053e  _main              0049a4
+_main_menu_text    01b5fd  _main_menu_text1   01b60c  _max_adc_arrayct   00045e
+_max_y             000426  _menu_name_text    015b18  _min_y             000424
+_minus_symbol      015b16  _model_name        01b552  _mvdc_text         01b61b
+_pass_text         01b620  _pc_data_ctr       000596  _pc_data_recd      000597
+_pc_recd_buffer    0005a2  _pc_timeout_ctr    000454  _pc_timeout_flag   000595
+_pending_pcdata_   000598  _plus_symbol       015b14  _pointer_info_bu   000568
+_press_key_text    01b62a  _readbleeder_ano   00050e  _readbleeder_cat   000512
+_readfilament_in   000516  _readhv_anode_va   000506  _readhv_cathode_   00050a
+_readhv_input_va   000502  _readlong_filame   00051e  _readshort_filam   00051a
+_second_contpres   000420  _second_key_flag   00058c  _second_press_fl   00058f
+_secondkey_bounc   00041a  _secondkey_relea   000589  _shift_machine_s   0005a1
+_short_filament_   0004ee  _short_filament_   00053a  _small_filament_   01b5ea
+_start             008984  _temp_disp_array   000428  _test_data_buffe   000546
+_test_failed_tex   015afc  _test_passed_tex   015af0  _third_key_flag    00058d
+_third_press_fla   000590  _thirdkey_bounce   00041c  _thirdkey_releas   00058a
+_vac_text          015b0c  _value_count_loc   000422  _vdc_text          015b10
+_vpk_text          015b08  dummy_int          00891c  start              008880
 
 ##########################################
 # (4) GLOBAL EQU SYMBOL INFORMATION      #
@@ -521,9 +520,9 @@ data_NEI
 data_NOI
                                   00004010  00004010         0   1
 program
-                                  00004010  0000880f      4800   2
+                                  00004010  0000887f      4870   2
 interrupt
-                                  00008810  00008942       133   2
+                                  00008880  000089b2       133   2
 vector
                                   0000fedc  0000ffdb       100   1
 fvector
@@ -780,44 +779,44 @@ FILE=D:/Others/hv_test_jig/test123/test123/src/fvector
                                   000041aa         5   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/general
-                                  000041b0  0000499f       7f0
+                                  000041b0  000049a3       7f4
   _Draw_Main_Window
-                                  000041b0        24   func ,g         0
+                                  000041b0        28   func ,g         0
   _Display_Key_Menu
-                                  000041d4        b4   func ,g         0
+                                  000041d8        b4   func ,g         0
   $Key_Type_Press_Event
-                                  00004288        92   func ,g         0
+                                  0000428c        92   func ,g         0
   $ReadN_Average_ADC
-                                  0000431a        8b   func ,g         0
+                                  0000431e        8b   func ,g         0
   $Conv_Data2_BCD
-                                  000043a6        69   func ,g         0
+                                  000043aa        69   func ,g         0
   $Conv_Data2_Ascii
-                                  0000440e        71   func ,g         0
+                                  00004412        71   func ,g         0
   $Conv_Data2_AsciiDecimal
-                                  00004480        aa   func ,g         0
+                                  00004484        aa   func ,g         0
   $Delay_Half_Seconds
-                                  0000452a        18   func ,g         0
+                                  0000452e        18   func ,g         0
   $Display_HVTKey_Menu
-                                  00004542       14a   func ,g         0
+                                  00004546       14a   func ,g         0
   $Write2_DAC_Register
-                                  0000468c        34   func ,g         0
+                                  00004690        34   func ,g         0
   _Display_Searching_Message
-                                  000046c0        5f   func ,g         0
+                                  000046c4        5f   func ,g         0
   $Wait4_User_Confirmation
-                                  0000471e        f3   func ,g         0
+                                  00004722        f3   func ,g         0
   _Check_Range
-                                  00004812        32   func ,g         0
+                                  00004816        32   func ,g         0
   _Display_Updated_Message
-                                  00004844        bb   func ,g         0
+                                  00004848        bb   func ,g         0
   _Display_Filament_Interchange
-                                  000048fe        6d   func ,g         0
+                                  00004902        6d   func ,g         0
   $Txr_Array_Data
-                                  0000496c        24   func ,g         0
+                                  00004970        24   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/HVTJ
-                                  000049a0  00004d95       3f6
+                                  000049a4  00004d95       3f2
   _main
-                                  000049a0       12c   func ,g         0
+                                  000049a4       128   func ,g         0
   _Main_Options_Menu
                                   00004acc        8c   func ,g         0
   _Display_Main_Menu
@@ -944,7 +943,7 @@ FILE=D:/Others/hv_test_jig/test123/test123/src/tanktest
                                   00006bc8        4e   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/tft
-                                  00006c50  00007d07      10b8
+                                  00006c50  00007d77      1128
   _DelayMs
                                   00006c50        49   func ,g         0
   _TFT_Init_IO
@@ -966,109 +965,107 @@ FILE=D:/Others/hv_test_jig/test123/test123/src/tft
   _TFT_reset
                                   00006de8        35   func ,g         0
   _TFT_ST7789_New_Init
-                                  00006e1c       235   func ,g         0
+                                  00006e1c       239   func ,g         0
   _Read_Driver_Info
-                                  00007052        df   func ,g         0
+                                  00007056        df   func ,g         0
   $byteToDWord
-                                  00007130        68   func ,g         0
+                                  00007134        68   func ,g         0
   $Set_Window_Add
-                                  00007198        38   func ,g         0
+                                  0000719c        88   func ,g         0
   _Reset_Window_Add
-                                  000071d0        27   func ,g         0
+                                  00007224        95   func ,g         0
   $Clear_Device_ST7789
-                                  000071f8        a6   func ,g         0
-  $Clear_Device
-                                  0000729e        4a   func ,g         0
+                                  000072ba        a7   func ,g         0
   $Clear_Window
-                                  000072e8        87   func ,g         0
+                                  00007360        86   func ,g         0
   $Draw_Straight_Line
-                                  0000736e        4e   func ,g         0
+                                  000073e6        4e   func ,g         0
   $Fill_Rect
-                                  000073bc       1c8   func ,g         0
+                                  00007434       1d0   func ,g         0
   $Draw_Rectangle
-                                  00007584        5e   func ,g         0
+                                  00007604        5e   func ,g         0
   $Draw_Window
-                                  000075e2       1dd   func ,g         0
+                                  00007662       1dd   func ,g         0
   $Write_Center_Text
-                                  000077c0        86   func ,g         0
+                                  00007840        86   func ,g         0
   $Write_Center_Text_Bar
-                                  00007846        8c   func ,g         0
+                                  000078c6        8c   func ,g         0
   $Write_Right_Text
-                                  000078d2        77   func ,g         0
+                                  00007952        77   func ,g         0
   $Write_Right_Text_Bar
-                                  00007948        7c   func ,g         0
+                                  000079c8        7c   func ,g         0
   $Write_Text
-                                  000079c4        73   func ,g         0
+                                  00007a44        73   func ,g         0
   $Write_Text_Bar
-                                  00007a38        d6   func ,g         0
+                                  00007ab8        d6   func ,g         0
   $Get_Font_Shape
-                                  00007b0e        77   func ,g         0
+                                  00007b8e        77   func ,g         0
   $Get_Font_Size
-                                  00007b84        46   func ,g         0
+                                  00007c04        46   func ,g         0
   $Write_Cur_Char
-                                  00007bca       13e   func ,g         0
+                                  00007c4a       12e   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/timer
-                                  00007d08  00007fee       2e7
+                                  00007d78  0000805e       2e7
   _Initialise_TimerA
-                                  00007d08        14   func ,g         0
+                                  00007d78        14   func ,g         0
   _Initialise_TimerD
-                                  00007d1c        ba   func ,g         0
+                                  00007d8c        ba   func ,g         0
   _Chk_Key_Press
-                                  00007dd6         a   func ,g         0
+                                  00007e46         a   func ,g         0
   _Chk_First_Key
-                                  00007de0        dd   func ,g         0
+                                  00007e50        dd   func ,g         0
   _Chk_Second_Key
-                                  00007ebe        e6   func ,g         0
+                                  00007f2e        e6   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/transactions
-                                  00007ff0  00008704       715
+                                  00008060  00008774       715
   _Show_All_Transactions
-                                  00007ff0       678   func ,g         0
+                                  00008060       678   func ,g         0
   _Send_Saved_Data
-                                  00008668        9d   func ,g         0
+                                  000086d8        9d   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/uart
-                                  00008706  00008758        53
+                                  00008776  000087c8        53
   _Set_UART0_Port
-                                  00008706        18   func ,g         0
+                                  00008776        18   func ,g         0
   $Send_Data2_UART0
-                                  0000871e        25   func ,g         0
+                                  0000878e        25   func ,g         0
 
 FILE=_i4divu
-                                  0000875a  000087a6        4d
+                                  000087ca  00008816        4d
   __i4divU
-                                  0000875a        4d   func ,g         0
+                                  000087ca        4d   func ,g         0
 
 FILE=_i4modu
-                                  000087a8  000087f2        4b
+                                  00008818  00008862        4b
   __i4modU
-                                  000087a8        4b   func ,g         0
+                                  00008818        4b   func ,g         0
 
 FILE=_i4mulu
-                                  000087f4  0000880f        1c
+                                  00008864  0000887f        1c
   __i4mulU
-                                  000087f4        1c   func ,g         0
+                                  00008864        1c   func ,g         0
 
 SECTION=interrupt
 FILE=ncrt0
-                                  00008810  000088ac        9d
+                                  00008880  0000891c        9d
   $exit
-                                  000088aa         0   none ,g         0
+                                  0000891a         0   none ,g         0
   _exit
-                                  000088aa         0   none ,g         0
+                                  0000891a         0   none ,g         0
   dummy_int
-                                  000088ac         0   none ,g         0
+                                  0000891c         0   none ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/initsct
-                                  000088ae  00008912        65
+                                  0000891e  00008982        65
   _initsct
-                                  000088ae        65   func ,g         0
+                                  0000891e        65   func ,g         0
 
 FILE=D:/Others/hv_test_jig/test123/test123/src/resetprg
-                                  00008914  00008942        2f
+                                  00008984  000089b2        2f
   _start
-                                  00008914        2f   func ,g         0
+                                  00008984        2f   func ,g         0
 
 SECTION=rom_FE
 FILE=D:/Others/hv_test_jig/test123/test123/src/Copy of font_arialnarrowbold16

@@ -115,6 +115,8 @@ void Send_TFT_Command(unsigned int cmd)
 void Send_TFT_Data(unsigned int data)
 {
 	TFT_DATA_PORTHI = data >> 8;
+//	WR = 0;
+//	WR = 1;
 	TFT_DATA_PORTLO = data;
 	WR = 0;
 	WR = 1;
@@ -189,14 +191,16 @@ void TFT_ST7789_New_Init(void)
    // RESET = 1;
    // DelayMs(50);
 
+	Send_TFT_Command(ST7789V_CMD_SLPOUT);    /* Exit Sleep mode */
     Send_TFT_Command(ST7789V_CMD_DISPOFF);
-    Send_TFT_Command(ST7789V_CMD_SLPOUT);    /* Exit Sleep mode */
+    
 
     DelayMs(100);
 
     Send_TFT_Command(ST7789V_CMD_MADCTL);
     Send_TFT_Data(0xa8);    /* MADCTL: memory data access control */
 
+	DelayMs(50);
     Send_TFT_Command(ST7789V_CMD_COLMOD);
     Send_TFT_Data(0x55);    /* COLMOD: Interface Pixel format */
 
@@ -206,6 +210,8 @@ void TFT_ST7789_New_Init(void)
     Send_TFT_Data(0x00);
     Send_TFT_Data(0x33);
     Send_TFT_Data(0x33);    /* PORCTRK: Porch setting */
+
+	//Send_TFT_Command(ST7789V_CMD_INVON);
 
     Send_TFT_Command(ST7789V_CMD_GCTRL);
     Send_TFT_Data(0x35);    /* GCTRL: Gate Control */
@@ -264,6 +270,16 @@ void TFT_ST7789_New_Init(void)
     Send_TFT_Data(0x18);
     Send_TFT_Data(0x16);
     Send_TFT_Data(0x19);    /* NVGAMCTRL: Negative Voltage Gamma control */
+/*	
+	Send_TFT_Command(0xB0);
+    Send_TFT_Data(0x11); //set RGB interface and DE mode.
+    Send_TFT_Data(0xC2);
+
+    Send_TFT_Command(0xB1);
+    Send_TFT_Data(0x40); //set DE mode.
+    Send_TFT_Data(0x04);
+    Send_TFT_Data(0x0A);*/
+	
 
     Send_TFT_Command(ST7789V_CMD_RASET);
     Send_TFT_Data(0x00);
@@ -277,10 +293,11 @@ void TFT_ST7789_New_Init(void)
     Send_TFT_Data(0x01);
     Send_TFT_Data(0x3F);    /* X address set */
 
-    DelayMs(10);
-	Clear_Device_ST7789(YELLOW);
-    Send_TFT_Command(ST7789V_CMD_DISPON);
-	Clear_Device_ST7789(BLUE);
+    DelayMs(50);
+	
+	//Clear_Device_ST7789(YELLOW);    
+	Clear_Device_ST7789(WHITE);
+	Send_TFT_Command(ST7789V_CMD_DISPON);
 }
 
 void Read_Driver_Info(){
@@ -350,17 +367,54 @@ void Set_Window_Add(signed int start_x, signed int end_x, signed int start_y, si
 {
 /* Specify the X direction operation area*/
     Send_TFT_Command(ST7789V_CMD_CASET);
-    Send_TFT_Data(start_x);
-    Send_TFT_Data(end_x);
+	
+	TFT_DATA_PORTLO = ((unsigned int)start_x) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = (unsigned int)start_x;
+	WR = 0;
+	WR = 1;
+	
+	
+	TFT_DATA_PORTLO = ((unsigned int)end_x) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = ((unsigned int)end_x);
+	WR = 0;
+	WR = 1;
+	
+	Send_TFT_Command(ST7789V_CMD_RASET);
+	
+	TFT_DATA_PORTLO = ((unsigned int)start_y) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = ((unsigned int)start_y);
+	WR = 0;
+	WR = 1;
+	
+	
+	TFT_DATA_PORTLO = ((unsigned int)end_y) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO =((unsigned int) end_y);
+	WR = 0;
+	WR = 1;
+	
+   // Send_TFT_Data(start_x);
+//	Send_TFT_Data(start_x);
+   // Send_TFT_Data(end_x);
+//Send_TFT_Data(end_x);
     //Send_TFT_CData(start_x >> 8);
     //Send_TFT_CData(start_x);
     //Send_TFT_CData(end_x >> 8);
     //Send_TFT_CData(end_x);
 
    /* Specify the Y direction operation area*/
-    Send_TFT_Command(ST7789V_CMD_RASET);
-    Send_TFT_Data(start_y);
-    Send_TFT_Data(end_y);
+  //  Send_TFT_Command(ST7789V_CMD_RASET);
+  //  Send_TFT_Data(start_y);
+//	Send_TFT_Data(start_y);
+   // Send_TFT_Data(end_y);
+//	Send_TFT_Data(end_y);
     //Send_TFT_CData(start_y >> 8);
     //Send_TFT_CData(start_y);
     //Send_TFT_CData(end_y >> 8);
@@ -388,6 +442,7 @@ void Reset_Window_Add()
 
     Send_TFT_Command(ST7789V_CMD_CASET);
     Send_TFT_Data(0);
+	Send_TFT_Data(0);
     Send_TFT_Data(TFT_SIZE_X);
     //Send_TFT_CData(start_x >> 8);
     //Send_TFT_CData(start_x);
@@ -396,19 +451,55 @@ void Reset_Window_Add()
 
    /* Specify the Y direction operation area*/
     Send_TFT_Command(ST7789V_CMD_RASET);
-    Send_TFT_Data(0);
+    Send_TFT_Data(0);	
     Send_TFT_Data(TFT_SIZE_Y);
+	
+	 Send_TFT_Command(ST7789V_CMD_CASET);
+	
+	TFT_DATA_PORTLO = ((unsigned int)0) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = (unsigned int)0;
+	WR = 0;
+	WR = 1;
+	
+	
+	TFT_DATA_PORTLO = ((unsigned int)TFT_SIZE_X) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = ((unsigned int)TFT_SIZE_X);
+	WR = 0;
+	WR = 1;
+	
+	Send_TFT_Command(ST7789V_CMD_RASET);
+	
+	TFT_DATA_PORTLO = ((unsigned int)0) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO = ((unsigned int)0);
+	WR = 0;
+	WR = 1;
+	
+	
+	TFT_DATA_PORTLO = ((unsigned int)TFT_SIZE_Y) >> 8;
+	WR = 0;
+	WR = 1;
+	TFT_DATA_PORTLO =((unsigned int) TFT_SIZE_Y);
+	WR = 0;
+	WR = 1;
 	
 }
 
 void Clear_Device_ST7789(unsigned int clear_color)
 {
+	
 	unsigned long counter;
+	
 	TFT_DATA_PORTHI = 0;
 	TFT_DATA_PORTLO =  ST7789V_CMD_CASET; //GRAM_HOR_AD; 
 	TFT_CONTROL_PORT &= 0xf9;
 	TFT_CONTROL_PORT |= 0x06;
-	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTHI = 0;
 	TFT_DATA_PORTLO = 0;
 	WR = 0;
 	WR = 1;
@@ -416,19 +507,22 @@ void Clear_Device_ST7789(unsigned int clear_color)
 	TFT_DATA_PORTLO = ST7789V_CMD_RASET; //GRAM_VER_AD
 	TFT_CONTROL_PORT &= 0xf9;
 	TFT_CONTROL_PORT |= 0x06;
-	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTHI = 0;
 	TFT_DATA_PORTLO = 0;
 	WR = 0;
 	WR = 1;
-	//TFT_DATA_PORTHI = 0;
+	TFT_DATA_PORTHI = 0;
+	
 	TFT_DATA_PORTLO = ST7789V_CMD_RAMWR; //RW_GRAM
 	TFT_CONTROL_PORT &= 0xf9;
 	TFT_CONTROL_PORT |= 0x06;
+	
+	//Set_Window_Add(0,100,0,50);
     for(counter = 0;counter < (unsigned long)FULL_SCREEN_SIZE;counter++)
 	{
 		TFT_DATA_PORTHI = clear_color >> 8;
-		WR = 0;
-		WR = 1;
+		//WR = 0;
+	//	WR = 1;
 		TFT_DATA_PORTLO = clear_color;
 		WR = 0;
 		WR = 1;
@@ -484,8 +578,8 @@ void Draw_Straight_Line(int start_x,int start_y,int end_x,int end_y,unsigned int
 	{
 		//Send_TFT_Data(line_color);
 		TFT_DATA_PORTHI = line_color >> 8;
-		WR = 0;
-		WR = 1;
+	//	WR = 0;
+	//	WR = 1;
 		TFT_DATA_PORTLO = line_color;
 		WR = 0;
 		WR = 1;
@@ -524,6 +618,8 @@ void Fill_Rect(unsigned int x, unsigned int y, unsigned int w, unsigned int h, u
 		{
 			//Send_TFT_Data(fill_color);
 			TFT_DATA_PORTHI = fill_color >> 8;
+		//	WR = 0;
+		//	WR = 1;
 			TFT_DATA_PORTLO = fill_color;
 			WR = 0;
 			WR = 1;
@@ -558,6 +654,8 @@ void Fill_Rect(unsigned int x, unsigned int y, unsigned int w, unsigned int h, u
 			{
 				//Send_TFT_Data(fill_color);
 				TFT_DATA_PORTHI = fill_color >> 8;
+				WR = 0;
+				WR = 1;
 				TFT_DATA_PORTLO = fill_color;
 				WR = 0;
 				WR = 1;
@@ -866,8 +964,8 @@ void Write_Cur_Char(unsigned far char * fnt, unsigned int font_color,unsigned in
 		{
 			//Send_TFT_Data(font_color);
 			TFT_DATA_PORTHI = font_color >> 8;
-			WR = 0;
-			WR = 1;
+		//	WR = 0;
+		//	WR = 1;
 			TFT_DATA_PORTLO = font_color;
 			WR = 0;
 			WR = 1;
@@ -914,8 +1012,8 @@ void Write_Cur_Char(unsigned far char * fnt, unsigned int font_color,unsigned in
 				default:
 					//Send_TFT_Data(back_color);
 					TFT_DATA_PORTHI = back_color >> 8;
-					WR = 0;
-					WR = 1;
+					//WR = 0;
+				//	WR = 1;
 					TFT_DATA_PORTLO = back_color;
 					WR = 0;
 					WR = 1;
