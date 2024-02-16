@@ -10,7 +10,7 @@
 "Debug_M16C_R8C_Simulator" 
 "Release" 
 [CURRENT_CONFIGURATION]
-"Debug" 
+"Release" 
 [CURRENT_SESSION]
 "DefaultSession" 
 [GENERAL_DATA_PROJECT]
