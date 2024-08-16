@@ -14,7 +14,7 @@
 #include "adc.h"
 
 const unsigned char company_name[] = {"GE BE LTD"};
-const unsigned char firmware_version[] = {"FW Ver 02.00 R 01"};
+const unsigned char firmware_version[] = {"FW Ver 03.00 R 00"};
 const unsigned char model_name[] = {"HV TANK TURNS RATIO TEST JIG"};
 const unsigned char menu_name_text[] = {"MAIN MENU"};
 //const unsigned char serialno_mesg[] = {"Serial No.:"};
