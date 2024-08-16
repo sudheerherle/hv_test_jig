@@ -92,7 +92,7 @@ void Initialise_Port_Pins()
 void Initialise_Variables()
 {
 	half_sec_flag = true;
-	half_sec_ctr = (unsigned int)HALF_SEC_CONST;
+	half_sec_ctr = HALF_SEC_CONST;
 	//key_beep_counter = 50;
 	value_count_loc =1;
 	firstkey_bounce_ctr = KEY_BOUNCE_CONST;
@@ -100,9 +100,6 @@ void Initialise_Variables()
 	second_contpress_ctr = SECOND_CONTPRESS_CONST;
 	secondkey_bounce_ctr = KEY_BOUNCE_CONST;
 	thirdkey_bounce_ctr = KEY_BOUNCE_CONST;
-	adc_timeout_flag = false;
-	adc_timeout_ctr = ADC_TIMEOUT_CONST;
-	cur_machine_state = IDLE_TEST_STATE;
 }
 
 void Start_Watch_Dog_Timer()
@@ -163,12 +160,11 @@ void Retrieve_E2_Values()
 {
 	gsc_i2c_retsts = ReadFromi2c(E2_ADD_CONST,0x02,POINTERINFO_ADD_CONST,(unsigned char *)&pointer_info_buffer.total_bytes,POINTER_INFO_BYTES);
 	gsc_i2c_retsts = ReadFromi2c(E2_ADD_CONST,0x02,pointer_info_buffer.cur_data_pointer,(unsigned char *)&test_data_buffer.test_number,TRAN_DATA_BYTES);
-	gsc_i2c_retsts = ReadFromi2c(E2_ADD_CONST,0x02,E2_DACADD_CONST,(unsigned char *)&dac_info_buffer.hv_dac_value,DAC_DATA_BYTES);
 }
 
 void Store_Factory_Values()
 {
-	/*unsigned int usi;
+	unsigned int usi;
 	test_data_buffer.test_number = 0;
 	test_data_buffer.hv_signal_input = 0;
 	test_data_buffer.hv_anode_volt = 0;
@@ -183,17 +179,12 @@ void Store_Factory_Values()
 	{
 		gsc_i2c_retsts = Write2i2c(E2_ADD_CONST,0x02,pointer_info_buffer.cur_data_pointer,(unsigned char *)&test_data_buffer.test_number,TRAN_DATA_BYTES);
 		pointer_info_buffer.cur_data_pointer = pointer_info_buffer.cur_data_pointer + TRAN_DATA_BYTES;
-	}*/
+	}
 	pointer_info_buffer.total_bytes = 0;
 	pointer_info_buffer.cur_data_pointer = E2EVENTSTART_ADD_CONST;
 	pointer_info_buffer.last_download_pointer = E2EVENTSTART_ADD_CONST;
 	pointer_info_buffer.test_no = 0;
 	gsc_i2c_retsts = Write2i2c(E2_ADD_CONST,0x02,POINTERINFO_ADD_CONST,(unsigned char *)&pointer_info_buffer.total_bytes,POINTER_INFO_BYTES);
-	dac_info_buffer.hv_signature = (unsigned int)0;
-	dac_info_buffer.fil_signature = (unsigned int)0;
-	dac_info_buffer.hv_dac_value = (unsigned int)INITIAL_HV_DAC_VALUE;
-	dac_info_buffer.filament_dac_value = (unsigned int)INITIAL_FIL_DAC_VALUE;
-	gsc_i2c_retsts = Write2i2c(E2_ADD_CONST,0x02,E2_DACADD_CONST,(unsigned char *)&dac_info_buffer.hv_dac_value,DAC_DATA_BYTES);
 }
 
 void Store_E2_Signature()

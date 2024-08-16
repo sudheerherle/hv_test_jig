@@ -24,9 +24,9 @@ void Display_Key_Menu()
 {
 	Clear_Window(XL_MARGIN + 5,(TFT_SIZE_Y - 17),TFT_SIZE_X - 10,13,WHITE);
 	Draw_Window(XL_MARGIN,YL_MARGIN - 21,XR_MARGIN,YL_MARGIN,GRAY6,GRAY0);
-	Write_Text(5,(TFT_SIZE_Y - 17),"UP",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
-	Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"DOWN",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
-	Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SELECT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+	Write_Text(5,(TFT_SIZE_Y - 17),"UP",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"DOWN",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SELECT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 }
 
 unsigned char Key_Type_Press_Event(unsigned int key_timeout_value)
@@ -60,34 +60,6 @@ unsigned char Key_Type_Press_Event(unsigned int key_timeout_value)
 		else if (key_timeout_flag == false)
 		{
 			return_value = 0;
-			break;
-		}
-		//check for the serial data from the PC
-		Chk_Serial_Data();
-		if (shift_machine_state == READ_TEST_STATE)
-		{
-			//send data to pc
-			shift_machine_state = IDLE_TEST_STATE;
-			if (cur_machine_state == HV_TEST_STATE)
-			{
-				Send_Current_HVData();
-			}
-			else if (cur_machine_state == FIL_TEST_STATE)
-			{
-				Send_Current_FILData();
-			}
-		}
-		if (shift_machine_state == DATA_TEST_STATE)
-		{
-			//send data to pc
-			shift_machine_state = IDLE_TEST_STATE;
-			Send_Saved_Data();
-		}
-		if (shift_machine_state == START_TEST_STATE)
-		{
-			shift_machine_state = IDLE_TEST_STATE;
-			Start_New_Test();
-			return_value = 4;
 			break;
 		}
 	}
@@ -153,6 +125,9 @@ unsigned char Conv_Data2_Ascii(unsigned long temp_hex_loc,unsigned char * temp_c
 			total_data_ctr++;
 		}
 	}
+	//temp_chr_ptr[usc] = temp_data_loc[usc] + 48;
+	//temp_chr_ptr[usc+1] = 0;
+	//total_data_ctr = total_data_ctr + 1;
 	temp_chr_ptr[total_data_ctr] = temp_data_loc[usc] + 48;
 	total_data_ctr++;
 	temp_chr_ptr[total_data_ctr] = 0;
@@ -177,11 +152,18 @@ unsigned char Conv_Data2_AsciiDecimal(unsigned long temp_hex_loc,unsigned char *
 		}
 		else
 		{
+			//temp_chr_ptr[usc] = temp_data_loc[usc] + 48;
 			temp_chr_ptr[total_data_ctr] = temp_data_loc[usc] + 48;
 			data_found_flag = true;
 			total_data_ctr++;
 		}
 	}
+	//temp_chr_ptr[usc] = temp_data_loc[usc] + 48;
+	//temp_chr_ptr[usc+1] = '.';
+	//temp_chr_ptr[usc+2] = temp_data_loc[usc+1] + 48;
+	//temp_chr_ptr[usc+3] = temp_data_loc[usc+2] + 48;
+	//temp_chr_ptr[usc+4] = 0;
+	//total_data_ctr = total_data_ctr + 4;
 	temp_chr_ptr[total_data_ctr] = temp_data_loc[usc] + 48;
 	total_data_ctr++;
 	temp_chr_ptr[total_data_ctr] = '.';
@@ -211,16 +193,16 @@ void Display_HVTKey_Menu(unsigned char cur_flag)
 		Clear_Window(XL_MARGIN + 5,(TFT_SIZE_Y - 17),TFT_SIZE_X - 10,13,WHITE);
 		Draw_Window(XL_MARGIN,YL_MARGIN - 21,XR_MARGIN,YL_MARGIN,GRAY6,GRAY0);
 		Write_Text(5,(TFT_SIZE_Y - 17),"CONTINUE",(unsigned far char *)&arial_narrow_bold12SI[0],GRAY3,WHITE,TFT_MODE_FULL);
-		Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"SKIP",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+		Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"SKIP",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 		Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SAVE",(unsigned far char *)&arial_narrow_bold12SI[0],GRAY3,WHITE,TFT_MODE_FULL);
 	}
 	if (cur_flag == 1)
 	{
-		Write_Text(5,(TFT_SIZE_Y - 17),"CONTINUE",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+		Write_Text(5,(TFT_SIZE_Y - 17),"CONTINUE",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 	}
 	if (cur_flag == 2)
 	{
-		Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SAVE",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+		Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SAVE",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 	}
 	if (cur_flag == 3)
 	{
@@ -243,7 +225,7 @@ void Display_Searching_Message()
 {
 	Clear_Window(XL_MARGIN + 5,(TFT_SIZE_Y - 17),TFT_SIZE_X - 10,13,WHITE);
 	Draw_Window(XL_MARGIN,YL_MARGIN - 21,XR_MARGIN,YL_MARGIN,GRAY6,GRAY0);
-	Write_Text(5,(TFT_SIZE_Y - 17),"SEARCHING",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+	Write_Text(5,(TFT_SIZE_Y - 17),"SEARCHING",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 }
 
 signed char Wait4_User_Confirmation(unsigned char nextbut)
@@ -252,12 +234,11 @@ signed char Wait4_User_Confirmation(unsigned char nextbut)
 	unsigned char key_type_value;
 	Clear_Window(XL_MARGIN + 5,(TFT_SIZE_Y - 17),TFT_SIZE_X - 10,13,WHITE);
 	Draw_Window(XL_MARGIN,YL_MARGIN - 21,XR_MARGIN,YL_MARGIN,GRAY6,GRAY0);
-	//Write_Text(5,(TFT_SIZE_Y - 17),"SEND",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
-	Write_Text(5,(TFT_SIZE_Y - 17),"SEND",(unsigned far char *)&arial_narrow_bold12SI[0],GRAY3,WHITE,TFT_MODE_FULL);
-	Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"EXIT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+	Write_Text(5,(TFT_SIZE_Y - 17),"SEND",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	Write_Center_Text(0,TFT_SIZE_X,(TFT_SIZE_Y - 17),"EXIT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 	if (nextbut == true)
 	{
-		Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"NEXT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+		Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"NEXT",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
 	}
 	while (true)
 	{
@@ -300,7 +281,7 @@ unsigned int Check_Range(unsigned long actual_value,unsigned long lower_range_va
 	return (return_value);
 }
 
-void Display_Updated_Message(unsigned long test_number,unsigned char continue_flag)
+void Display_Updated_Message(unsigned long test_number)
 {
 	unsigned char nob;
 	unsigned int color;
@@ -310,11 +291,42 @@ void Display_Updated_Message(unsigned long test_number,unsigned char continue_fl
 	Write_Text(10,YL_MARGIN - 96,"TEST NUMBER",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
 	nob = Conv_Data2_Ascii(test_number,&temp_disp_array[0]);
 	Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 96,&temp_disp_array[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
-	Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SAVE",(unsigned far char *)&arial_narrow_bold12SI[0],GRAY3,WHITE,TFT_MODE_FULL);
-	if (continue_flag == true)
+	/*Write_Text(10,YL_MARGIN - 77,"HV TURNS RATIO TEST ",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
+	color = Check_Range(test_data_buffer.hv_anode_volt,HVT_LO_CONST,HVT_HI_CONST);
+	color1 = Check_Range(test_data_buffer.hv_cathode_volt,HVT_LO_CONST,HVT_HI_CONST);
+	if ((color == BRIGHTGREEN) && (color1 == BRIGHTGREEN))
 	{
-		Delay_Seconds_With_Key(60);
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 77,&pass_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
 	}
+	else
+	{
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 77,&fail_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	}
+	Write_Text(10,YL_MARGIN - 58,"BLEEDER TURNS RATIO TEST ",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
+	color = Check_Range(test_data_buffer.bleeder_anode_volt,BLEEDER_LO_CONST,BLEEDER_HI_CONST);
+	color1 = Check_Range(test_data_buffer.bleeder_cathode_volt,BLEEDER_LO_CONST,BLEEDER_HI_CONST);
+	if ((color == BRIGHTGREEN) && (color1 == BRIGHTGREEN))
+	{
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 58,&pass_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+	}
+	else
+	{
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 58,&fail_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	}
+	Write_Text(10,YL_MARGIN - 39,"FILAMENT TURNS RATIO TEST ",(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
+	color = Check_Range(test_data_buffer.long_filament_volt,FILAMENT_LO_CONST,FILAMENT_HI_CONST);
+	color1 = Check_Range(test_data_buffer.short_filament_volt,FILAMENT_LO_CONST,FILAMENT_HI_CONST);
+	if ((color == BRIGHTGREEN) && (color1 == BRIGHTGREEN))
+	{
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 39,&pass_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTGREEN,WHITE,TFT_MODE_FULL);
+	}
+	else
+	{
+		Write_Right_Text(XR_MARGIN - 10,YL_MARGIN - 39,&fail_text[0],(unsigned far char *)&arial_narrow_bold12SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	}*/
+	Write_Right_Text(XR_MARGIN - 5,(TFT_SIZE_Y - 17),"SAVE",(unsigned far char *)&arial_narrow_bold12SI[0],GRAY3,WHITE,TFT_MODE_FULL);
+	//Delay_Half_Seconds(20);
+	Delay_Seconds_With_Key(60);
 }
 
 void Display_Filament_Interchange()
@@ -322,7 +334,10 @@ void Display_Filament_Interchange()
 	unsigned char nob;
 	Clear_Window(10,YL_MARGIN - 91,XR_MARGIN - 20,70,WHITE);
 	Draw_Window(10,YL_MARGIN - 91,XR_MARGIN - 10,YL_MARGIN - 25,GRAY6,GRAY0);
-	Write_Center_Text(0,TFT_SIZE_X,YL_MARGIN - 67,&filnot_connected_text[0],(unsigned far char *)&arial_narrow_bold16SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	Write_Center_Text(0,TFT_SIZE_X,YL_MARGIN - 67,"Filament not properly connected",(unsigned far char *)&arial_narrow_bold16SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	//Write_Center_Text(0,TFT_SIZE_X,YL_MARGIN - 67,"Interchange the connection and",(unsigned far char *)&arial_narrow_bold16SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	//Write_Center_Text(0,TFT_SIZE_X,YL_MARGIN - 48,"start the test again.",(unsigned far char *)&arial_narrow_bold16SI[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	//Delay_Half_Seconds(10);
 	Delay_Seconds_With_Key(6000);
 }
 

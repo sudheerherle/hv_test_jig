@@ -16,9 +16,6 @@
 /*						implemented filament change message for both   */
 /*						short and long filament						   */
 /*						message display time increased to 6000 half sec*/
-/*	2.00				updated on 14-01-2021						   */
-/*						implemented control of test using serial       */
-/*						interface              						   */
 /***********************************************************************/
 
 #include "sfr_r82b.h"
@@ -66,7 +63,6 @@ void main(void)
 	Delay_Half_Seconds(2);
 	while (true)
 	{
-		cur_machine_state = START_TEST_STATE;
 		Main_Options_Menu();
 	}
 }
@@ -86,10 +82,14 @@ void Main_Options_Menu()
 			if (main_menu_no == 1)
 			{
 				main_menu_no = 2;
+				//Write_Text_Bar(4,98,10,TFT_SIZE_X-4,&main_menu_text[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,WHITE,TFT_MODE_FULL);
+				//Write_Text_Bar(4,134,10,TFT_SIZE_X-4,&main_menu_text1[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,BRIGHTMAGENTA,TFT_MODE_FULL);
 			}
 			else
 			{
 				main_menu_no--;
+				//Write_Text_Bar(4,98,10,TFT_SIZE_X-4,&main_menu_text[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,BRIGHTMAGENTA,TFT_MODE_FULL);
+				//Write_Text_Bar(4,134,10,TFT_SIZE_X-4,&main_menu_text1[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,WHITE,TFT_MODE_FULL);
 			}
 			Display_Menu_Bar(main_menu_no);
 		}
@@ -98,10 +98,14 @@ void Main_Options_Menu()
 			if (main_menu_no == 2)
 			{
 				main_menu_no = 1;
+				//Write_Text_Bar(4,98,10,TFT_SIZE_X-4,&main_menu_text[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,BRIGHTMAGENTA,TFT_MODE_FULL);
+				//Write_Text_Bar(4,134,10,TFT_SIZE_X-4,&main_menu_text1[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,WHITE,TFT_MODE_FULL);
 			}
 			else
 			{
 				main_menu_no++;
+				//Write_Text_Bar(4,98,10,TFT_SIZE_X-4,&main_menu_text[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,WHITE,TFT_MODE_FULL);
+				//Write_Text_Bar(4,134,10,TFT_SIZE_X-4,&main_menu_text1[0],(unsigned far char *)&arial_narrow_bold20[0],BLACK,BRIGHTMAGENTA,TFT_MODE_FULL);
 			}
 			Display_Menu_Bar(main_menu_no);
 		}
@@ -118,14 +122,6 @@ void Main_Options_Menu()
 			}
 			Display_Main_Menu();
 			Display_Menu_Bar(main_menu_no);
-			cur_machine_state = START_TEST_STATE;
-		}
-		else if (key_type_value == 4)
-		{
-			Display_Main_Menu();
-			Display_Menu_Bar(main_menu_no);
-			cur_machine_state = START_TEST_STATE;
-			//shift_machine_state = IDLE_TEST_STATE;
 		}
 	}
 }
@@ -135,7 +131,7 @@ void Display_Main_Menu()
 	Draw_Main_Window();
 	Write_Center_Text(0,TFT_SIZE_X,5,&company_name[0],(unsigned far char *)&arial_narrow_bold24[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
 	Write_Center_Text(0,TFT_SIZE_X,40,&model_name[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
-	Write_Center_Text(0,TFT_SIZE_X,80,&menu_name_text[0],(unsigned far char *)&arial_narrow_bold20[0],BRIGHTRED,WHITE,TFT_MODE_FULL);
+	Write_Center_Text(0,TFT_SIZE_X,80,&menu_name_text[0],(unsigned far char *)&arial_narrow_bold20[0],BROWN,WHITE,TFT_MODE_FULL);
 	Display_Key_Menu();
 }
 
@@ -153,105 +149,3 @@ void Display_Menu_Bar(unsigned char cur_menu_no)
 			break;
 	}
 }
-
-void Chk_Serial_Data()
-{
-	unsigned char return_value;
-	unsigned char nak_send_flag = false;
-	if (pc_data_recd == true)
-	{
-		shift_machine_state = IDLE_TEST_STATE;
-		return_value = Compare_CCTalkData_Chksum();
-		if (return_value == true)
-		{
-			switch (pc_recd_buffer.header)
-			{
-				case START_TEST_HEADER:
-					if (cur_machine_state == START_TEST_STATE)
-					{
-						shift_machine_state = START_TEST_STATE;//HV_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-				case STOP_TEST_HEADER:
-					if ((cur_machine_state == HV_TEST_STATE) || (cur_machine_state == FIL_TEST_STATE) || (cur_machine_state == PRINT_TEST_STATE))
-					{
-						shift_machine_state = STOP_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-				case READ_TEST_HEADER:
-					if ((cur_machine_state == HV_TEST_STATE) || (cur_machine_state == FIL_TEST_STATE))
-					{
-						shift_machine_state = READ_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-				case SAVE_TEST_HEADER:
-					if (cur_machine_state == FIL_TEST_STATE)
-					{
-						shift_machine_state = SAVE_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-				case CONTINUE_TEST_HEADER:
-					if (cur_machine_state == HV_TEST_STATE)
-					{
-						shift_machine_state = FIL_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-				case DATA_DOWNLOAD_HEADER:
-					if ((cur_machine_state == START_TEST_STATE) || (cur_machine_state == PRINT_TEST_STATE))
-					{
-						shift_machine_state = DATA_TEST_STATE;
-					}
-					else
-					{
-						//send nak
-						nak_send_flag = true;
-					}
-					break;
-			}
-		}
-		else
-		{
-			//send nak
-			nak_send_flag = true;
-		}
-		if (nak_send_flag == true)
-		{
-			Send_NAK_Message();
-		}
-		pc_data_recd = false;
-	}
-}
-
-void Send_NAK_Message()
-{
-	struct general_cctalk_data pc_data_buffer;
-	pc_data_buffer.nob = 0;
-	//pc_data_buffer.unit_address = hvt_slno_loc;
-	Send_CCTalk_Data((struct general_cctalk_data *)&pc_data_buffer.dest_addr,NAK_TEST_HEADER,false,MAXPC_TIMEOUT_CONST);
-}
-

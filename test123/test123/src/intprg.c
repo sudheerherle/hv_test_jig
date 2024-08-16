@@ -195,17 +195,12 @@ void _timer_ra(void)
 {
   	wdtr = 0x00;     // Clear WDT
   	wdtr = 0xFF;
-	adc_timeout_ctr--;
-	if (adc_timeout_ctr == 0)
-	{
-		adc_timeout_flag = true;
-		adc_timeout_ctr = ADC_TIMEOUT_CONST;
-	}
+  	Chk_Key_Press();
 	half_sec_ctr--;
 	if (half_sec_ctr == 0)
 	{
 		half_sec_flag = true;
-		half_sec_ctr = (unsigned int)HALF_SEC_CONST;
+		half_sec_ctr = HALF_SEC_CONST;
 		if (key_timeout_flag == true)
 		{
 			key_timeout_ctr--;
@@ -224,7 +219,6 @@ void _timer_ra(void)
 			pc_timeout_ctr = MAXPC_TIMEOUT_CONST;
 		}
 	}
-  	Chk_Key_Press();
 }
 
 // vector 23 reserved
@@ -262,120 +256,7 @@ void _int0(void){}
 // AD converter			(software int 30)
 #pragma interrupt	_ad_converter(vect=30)
 void _ad_converter(void);
-void _ad_converter(void)
-{
-	unsigned long cur_adc_value;
-	unsigned long temp_calculated_value;
-   	cur_adc_value = (ad0 & 0x03ff);
-	adst = 0;
-	adic = 0x00;
-	if (hv_input_flag == true)
-	{
-		switch (adcon0)
-		{
-			case 0x80:
-				adcon0 = 0x82;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)HV_SIGNAL_INPUT_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				hv_input_value = hv_input_value + temp_calculated_value;
-				break;
-			case 0x82:
-				adcon0 = 0x83;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)HV_ANODECATHODE_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				hv_cathode_value = hv_cathode_value + temp_calculated_value;
-				break;
-			case 0x83:
-				adcon0 = 0x84;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)HV_ANODECATHODE_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				hv_anode_value = hv_anode_value + temp_calculated_value;
-				break;
-			case 0x84:
-				adcon0 = 0x85;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)HV_BLEEDER_AC_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				bleeder_anode_value = bleeder_anode_value + temp_calculated_value;
-				break;
-			default:
-				adcon0 = 0x80;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)HV_BLEEDER_AC_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				bleeder_cathode_value = bleeder_cathode_value + temp_calculated_value;
-				adc_avg_ctr++;
-				if (discard_adc_flag == true)
-				{
-					if (adc_avg_ctr == 2)
-					{
-						discard_adc_flag = false;
-						adc_avg_ctr = 0;
-						hv_input_value = 0;
-						hv_cathode_value = 0;
-						hv_anode_value = 0;
-						bleeder_anode_value = 0;
-						bleeder_cathode_value = 0;
-						//if (adc_timeout_flag == true)
-						//{
-							adc_timeout_flag = false;
-							adc_timeout_ctr = ADC_TIMEOUT_CONST;
-							half_sec_ctr = (unsigned int)DOUBLEADC_TIMEOUT_CONST;
-							half_sec_flag = false;
-							adc_read_flag = false;
-						//}
-					}
-				}
-				if (adc_timeout_flag == true)
-				{
-					adc_timeout_flag = false;
-					adc_read_flag = true;
-				}
-				break;
-		}
-	}
-	else
-	{
-		switch (adcon0)
-		{
-			case 0x81:
-				adcon0 = 0x86;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)FIL_SIGNAL_INPUT_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				filament_input_value = filament_input_value + temp_calculated_value;
-				break;
-			case 0x86:
-				adcon0 = 0x87;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)FIL_ANODECATHODE_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				long_filament_value = long_filament_value + temp_calculated_value;
-				break;
-			default:
-				adcon0 = 0x81;
-				temp_calculated_value = ((cur_adc_value * (unsigned long)FIL_ANODECATHODE_CONST) / (unsigned long)MAX_ADC_REF_CONST);
-				short_filament_value = short_filament_value + temp_calculated_value;
-				adc_avg_ctr++;
-				if (discard_adc_flag == true)
-				{
-					if (adc_avg_ctr == 2)
-					{
-						discard_adc_flag = false;
-						adc_avg_ctr = 0;
-						filament_input_value = 0;
-						long_filament_value = 0;
-						short_filament_value = 0;
-						//if (adc_timeout_flag == true)
-						//{
-							adc_timeout_flag = false;
-							adc_timeout_ctr = ADC_TIMEOUT_CONST;
-							half_sec_ctr = (unsigned int)DOUBLEADC_TIMEOUT_CONST;
-							half_sec_flag = false;
-							adc_read_flag = false;
-						//}
-					}
-				}
-				if (adc_timeout_flag == true)
-				{
-					adc_timeout_flag = false;
-					adc_read_flag = true;
-				}
-				break;
-		}
-	}
-	adst = 1;
-	adic = 0x01;
-}
+void _ad_converter(void){}
 
 // capture			(software int 31)
 #pragma interrupt	_capture(vect=31)
