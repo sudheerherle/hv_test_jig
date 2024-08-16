@@ -13,7 +13,7 @@
 #include "adc.h"
 #include "cctalk.h"
 
-unsigned char Send_CCTalk_Data(struct cctalk_data * cctalk_info_buffer,unsigned char cctalk_header,unsigned char reply_flag, unsigned int time_value)
+unsigned char Send_CCTalk_Data(struct general_cctalk_data * cctalk_info_buffer,unsigned char cctalk_header,unsigned char reply_flag, unsigned int time_value)
 {
 	unsigned char usc;
 	unsigned char result;
@@ -70,7 +70,7 @@ unsigned char Wait4_UART0_Data()
 	return (return_value);
 }
 
-void Calculate_CCTalkData_Chksum(struct cctalk_data * cctalk_info_buffer)
+void Calculate_CCTalkData_Chksum(struct general_cctalk_data * cctalk_info_buffer)
 {
 	unsigned int crc;
 	unsigned char nob;

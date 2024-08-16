@@ -66,9 +66,48 @@ unsigned char chr_bit_height;
 unsigned char chr_bit_width;
 unsigned long hvt_slno_loc;
 
+unsigned char adc_read_flag;
+unsigned long adc_array_ctr;
+unsigned long max_adc_arrayctr;
+unsigned long hv_input_array[ADC_ARRAY_CONST]; 
+unsigned long hv_cathode_array[ADC_ARRAY_CONST]; 
+unsigned long hv_anode_array[ADC_ARRAY_CONST]; 
+unsigned long bleeder_anode_array[ADC_ARRAY_CONST]; 
+unsigned long bleeder_cathode_array[ADC_ARRAY_CONST]; 
+unsigned long filament_input_array[ADC_ARRAY_CONST]; 
+unsigned long long_filament_array[ADC_ARRAY_CONST]; 
+unsigned long short_filament_array[ADC_ARRAY_CONST]; 
+unsigned long readhv_input_value;
+unsigned long readhv_anode_value;
+unsigned long readhv_cathode_value;
+unsigned long readbleeder_anode_value;
+unsigned long readbleeder_cathode_value;
+unsigned long readfilament_input_value;
+unsigned long readshort_filament_value;
+unsigned long readlong_filament_value;
+unsigned long hv_input_value;
+unsigned long hv_anode_value;
+unsigned long hv_cathode_value;
+unsigned long bleeder_anode_value;
+unsigned long bleeder_cathode_value;
+unsigned long filament_input_value;
+unsigned long short_filament_value;
+unsigned long long_filament_value;
+unsigned char hv_input_flag;
+unsigned long adc_avg_ctr;
+unsigned char adc_timeout_flag;
+unsigned char adc_timeout_ctr;
+unsigned char discard_adc_flag;
+unsigned char cur_machine_state;
+unsigned char shift_machine_state;
 
 
 
+
+struct test_data test_data_buffer;
+struct cctalk_data pc_recd_buffer;
+struct pointer_info pointer_info_buffer;
+struct dac_info dac_info_buffer;
 
 
 
@@ -111,9 +150,9 @@ const unsigned short CCITT_CRC_LookupTable[256] =
 #pragma section rom Sl_No
 const unsigned char dummy_add_loc[4] = {0x05,0xf7,0xc8,0x46};
 
-#pragma SECTION bss HigherRAM
+/*#pragma SECTION bss HigherRAM
 struct test_data test_data_buffer;
-struct cctalk_data pc_data_buffer;
 struct cctalk_data pc_recd_buffer;
 struct pointer_info pointer_info_buffer;
+struct dac_info dac_info_buffer;*/
 

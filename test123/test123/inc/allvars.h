@@ -64,11 +64,48 @@ extern unsigned char chr_bit_height;
 extern unsigned char chr_bit_width;
 extern unsigned long hvt_slno_loc;
 
+extern unsigned char adc_read_flag;
+extern unsigned long adc_array_ctr;
+extern unsigned long max_adc_arrayctr;
+extern unsigned long hv_input_array[ADC_ARRAY_CONST]; 
+extern unsigned long hv_cathode_array[ADC_ARRAY_CONST]; 
+extern unsigned long hv_anode_array[ADC_ARRAY_CONST]; 
+extern unsigned long bleeder_anode_array[ADC_ARRAY_CONST]; 
+extern unsigned long bleeder_cathode_array[ADC_ARRAY_CONST]; 
+extern unsigned long filament_input_array[ADC_ARRAY_CONST]; 
+extern unsigned long long_filament_array[ADC_ARRAY_CONST]; 
+extern unsigned long short_filament_array[ADC_ARRAY_CONST]; 
+extern unsigned long readhv_input_value;
+extern unsigned long readhv_anode_value;
+extern unsigned long readhv_cathode_value;
+extern unsigned long readbleeder_anode_value;
+extern unsigned long readbleeder_cathode_value;
+extern unsigned long readfilament_input_value;
+extern unsigned long readshort_filament_value;
+extern unsigned long readlong_filament_value;
+extern unsigned long hv_input_value;
+extern unsigned long hv_anode_value;
+extern unsigned long hv_cathode_value;
+extern unsigned long bleeder_anode_value;
+extern unsigned long bleeder_cathode_value;
+extern unsigned long filament_input_value;
+extern unsigned long short_filament_value;
+extern unsigned long long_filament_value;
+extern unsigned char hv_input_flag;
+extern unsigned long adc_avg_ctr;
+extern unsigned char adc_timeout_flag;
+extern unsigned char adc_timeout_ctr;
+extern unsigned char discard_adc_flag;
+extern unsigned char cur_machine_state;
+extern unsigned char shift_machine_state;
+
+
+
 
 extern struct pointer_info pointer_info_buffer;;
 extern struct test_data test_data_buffer;
-extern struct cctalk_data pc_data_buffer;
 extern struct cctalk_data pc_recd_buffer;
+extern struct dac_info dac_info_buffer;
 
 extern const unsigned short CCITT_CRC_LookupTable[256];
 
@@ -102,6 +139,8 @@ extern const unsigned char fail_text[];
 extern const unsigned char plus_symbol[];
 extern const unsigned char minus_symbol[];
 extern const unsigned char menu_name_text[];
+extern const unsigned char filnot_connected_text[];
+
 
 extern const unsigned char press_key_text[];
 
