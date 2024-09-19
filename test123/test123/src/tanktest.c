@@ -324,7 +324,7 @@ void Start_New_Test()
 	//FILAMENT_CHECK_PIN = LOW;
 	Draw_Main_Window();
 	Write_Center_Text(0,TFT_SIZE_X,5,&model_name[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
-	Write_Center_Text_Bar(20,TFT_SIZE_X-20,32,&filament_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,BRIGHTYELLOW,TFT_MODE_FULL);
+	Write_Center_Text_Bar(20,TFT_SIZE_X-20,32,&filament_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,LIGHTGRAY,TFT_MODE_FULL);
 	Write_Text(5,60,&filament_input_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(267,60,&vac_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(5,86,&large_filament_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
