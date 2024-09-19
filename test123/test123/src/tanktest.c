@@ -63,7 +63,7 @@ void Start_New_Test()
 	HV_CHECK_PIN = LOW;
 	Draw_Main_Window();
 	Write_Center_Text(0,TFT_SIZE_X,5,&model_name[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,WHITE,TFT_MODE_FULL);
-	Write_Center_Text_Bar(20,TFT_SIZE_X-20,32,&hv_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,BRIGHTYELLOW,TFT_MODE_FULL);
+	Write_Center_Text_Bar(20,TFT_SIZE_X-20,32,&hv_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,LIGHTGRAY,TFT_MODE_FULL);
 	Write_Text(5,60,&hv_input_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(267,60,&vpk_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	//Write_Text(267,60,&vac_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
@@ -73,7 +73,7 @@ void Start_New_Test()
 	Write_Text(5,112,&cathode_hv_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(180,112,&minus_symbol[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(267,112,&vdc_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
-	Write_Center_Text_Bar(20,TFT_SIZE_X-20,140,&bleeder_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,BRIGHTYELLOW,TFT_MODE_FULL);
+	Write_Center_Text_Bar(20,TFT_SIZE_X-20,140,&bleeder_turns_text[0],(unsigned far char *)&arial_narrow_bold16[0],BRIGHTBLUE,LIGHTGRAY,TFT_MODE_FULL);
 	Write_Text(5,168,&bleeder_anode_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(180,168,&plus_symbol[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);
 	Write_Text(267,168,&mvdc_text[0],(unsigned far char *)&arial_narrow_bold16[0],BLACK,WHITE,TFT_MODE_FULL);

@@ -8,29 +8,45 @@
 "BuildMultipleSettings" "test123|Debug|test123|Config1|test123|Release||" 
 [BREAKPOINTS]
 [OPEN_WORKSPACE_FILES]
+"D:\Others\hv_test_jig\test123\test123\Config1\ncrt0.lst" 
 "D:\Others\hv_test_jig\test123\test123\Config1\test123.map" 
-"D:\Others\hv_test_jig\test123\test123\Debug\test123.map" 
 "D:\Others\hv_test_jig\test123\test123\inc\adc.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\all_headers.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\allvars.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\cctalk.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\general.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\globals.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\hvtj.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\iic.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\init.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\main.h" 
+"D:\Others\hv_test_jig\test123\test123\inc\resetprg.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\tanktest.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\tft.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\timer.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\transactions.h" 
 "D:\Others\hv_test_jig\test123\test123\inc\typedefine.h" 
+"D:\Others\hv_test_jig\test123\test123\nc_define.inc" 
 "D:\Others\hv_test_jig\test123\test123\ncrt0.a30" 
+"D:\Others\hv_test_jig\test123\test123\Release\ncrt0.lst" 
+"D:\Others\hv_test_jig\test123\test123\Release\test123.map" 
+"D:\Others\hv_test_jig\test123\test123\sect30.inc" 
 "D:\Others\hv_test_jig\test123\test123\src\adc.c" 
 "D:\Others\hv_test_jig\test123\test123\src\bleedertest.c" 
+"D:\Others\hv_test_jig\test123\test123\src\cctalk.c" 
+"D:\Others\hv_test_jig\test123\test123\src\Copy of font_arialnarrowbold16.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12SI.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold14.c" 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold16.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold20.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold24.c" 
 "D:\Others\hv_test_jig\test123\test123\src\font_helvB10.c" 
+"D:\Others\hv_test_jig\test123\test123\src\fvector.c" 
 "D:\Others\hv_test_jig\test123\test123\src\general.c" 
 "D:\Others\hv_test_jig\test123\test123\src\hvtconstants.c" 
 "D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" 
+"D:\Others\hv_test_jig\test123\test123\src\init.c" 
 "D:\Others\hv_test_jig\test123\test123\src\intprg.c" 
 "D:\Others\hv_test_jig\test123\test123\src\resetprg.c" 
 "D:\Others\hv_test_jig\test123\test123\src\tanktest.c" 
@@ -39,36 +55,52 @@
 "D:\Others\hv_test_jig\test123\test123\src\transactions.c" 
 "D:\Others\hv_test_jig\test123\test123\src\uart.c" 
 [WORKSPACE_FILE_STATES]
-"D:\Others\hv_test_jig\test123\test123\Config1\test123.map" 0 0 1303 321 0 5 
-"D:\Others\hv_test_jig\test123\test123\Debug\test123.map" 0 0 1303 321 0 4 
-"D:\Others\hv_test_jig\test123\test123\inc\adc.h" 0 0 1363 406 0 27 
-"D:\Others\hv_test_jig\test123\test123\inc\all_headers.h" 0 0 1363 406 0 26 
-"D:\Others\hv_test_jig\test123\test123\inc\general.h" 0 0 1363 406 0 25 
-"D:\Others\hv_test_jig\test123\test123\inc\init.h" 0 0 1251 406 0 7 
-"D:\Others\hv_test_jig\test123\test123\inc\tanktest.h" 0 0 1363 406 0 24 
-"D:\Others\hv_test_jig\test123\test123\inc\tft.h" 0 0 1319 406 0 28 
-"D:\Others\hv_test_jig\test123\test123\inc\timer.h" 0 0 1363 406 0 23 
-"D:\Others\hv_test_jig\test123\test123\inc\transactions.h" 0 0 1363 406 0 22 
-"D:\Others\hv_test_jig\test123\test123\inc\typedefine.h" 0 0 1363 406 0 21 
+"D:\Others\hv_test_jig\test123\test123\Config1\ncrt0.lst" 0 0 1397 281 0 38 
+"D:\Others\hv_test_jig\test123\test123\Config1\test123.map" 0 0 1303 321 0 4 
+"D:\Others\hv_test_jig\test123\test123\Release\ncrt0.lst" 26 26 1397 281 0 39 
+"D:\Others\hv_test_jig\test123\test123\Release\test123.map" 0 0 1319 406 0 32 
+"D:\Others\hv_test_jig\test123\test123\inc\adc.h" 0 0 1363 406 0 26 
+"D:\Others\hv_test_jig\test123\test123\inc\all_headers.h" 0 0 1363 406 0 25 
+"D:\Others\hv_test_jig\test123\test123\inc\allvars.h" 78 78 1371 311 0 43 
+"D:\Others\hv_test_jig\test123\test123\inc\cctalk.h" 78 78 1397 281 0 41 
+"D:\Others\hv_test_jig\test123\test123\inc\general.h" 0 0 1363 406 0 24 
+"D:\Others\hv_test_jig\test123\test123\inc\globals.h" 104 104 1371 311 0 44 
+"D:\Others\hv_test_jig\test123\test123\inc\hvtj.h" 130 130 1319 406 0 29 
+"D:\Others\hv_test_jig\test123\test123\inc\iic.h" 130 130 1371 311 0 45 
+"D:\Others\hv_test_jig\test123\test123\inc\init.h" 0 0 1251 406 0 6 
+"D:\Others\hv_test_jig\test123\test123\inc\main.h" 104 104 1397 281 0 37 
+"D:\Others\hv_test_jig\test123\test123\inc\resetprg.h" 52 52 1397 281 0 35 
+"D:\Others\hv_test_jig\test123\test123\inc\tanktest.h" 0 0 1363 406 0 23 
+"D:\Others\hv_test_jig\test123\test123\inc\tft.h" -8 -31 1517 627 1 27 
+"D:\Others\hv_test_jig\test123\test123\inc\timer.h" 0 0 1363 406 0 22 
+"D:\Others\hv_test_jig\test123\test123\inc\transactions.h" 0 0 1363 406 0 21 
+"D:\Others\hv_test_jig\test123\test123\inc\typedefine.h" 0 0 1363 406 0 20 
+"D:\Others\hv_test_jig\test123\test123\nc_define.inc" 78 78 1397 281 0 36 
 "D:\Others\hv_test_jig\test123\test123\ncrt0.a30" 0 0 1449 627 0 0 
-"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" -8 -31 1517 627 1 1 
-"D:\Others\hv_test_jig\test123\test123\src\adc.c" 0 0 1363 406 0 18 
-"D:\Others\hv_test_jig\test123\test123\src\bleedertest.c" 0 0 1363 406 0 19 
-"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12.c" 0 0 1363 349 0 9 
-"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12SI.c" 0 0 1363 349 0 13 
-"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold14.c" 0 0 1363 406 0 20 
-"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold20.c" 0 0 1363 349 0 12 
-"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold24.c" 0 0 1363 349 0 10 
-"D:\Others\hv_test_jig\test123\test123\src\font_helvB10.c" 0 0 1363 406 0 17 
+"D:\Others\hv_test_jig\test123\test123\sect30.inc" 26 26 1397 281 0 34 
+"D:\Others\hv_test_jig\test123\test123\src\Copy of font_arialnarrowbold16.c" 156 156 1319 406 0 30 
+"D:\Others\hv_test_jig\test123\test123\src\HVTJ.c" 0 0 1517 627 0 1 
+"D:\Others\hv_test_jig\test123\test123\src\adc.c" 0 0 1363 406 0 17 
+"D:\Others\hv_test_jig\test123\test123\src\bleedertest.c" 0 0 1363 406 0 18 
+"D:\Others\hv_test_jig\test123\test123\src\cctalk.c" 52 52 1397 281 0 40 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12.c" 0 0 1363 349 0 8 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold12SI.c" 0 0 1363 349 0 12 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold14.c" 0 0 1363 406 0 19 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold16.c" 182 182 1319 406 0 31 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold20.c" 0 0 1363 349 0 11 
+"D:\Others\hv_test_jig\test123\test123\src\font_arialnarrowbold24.c" 0 0 1363 349 0 9 
+"D:\Others\hv_test_jig\test123\test123\src\font_helvB10.c" 0 0 1363 406 0 16 
+"D:\Others\hv_test_jig\test123\test123\src\fvector.c" 26 26 1319 406 0 33 
 "D:\Others\hv_test_jig\test123\test123\src\general.c" 0 0 1517 627 0 3 
-"D:\Others\hv_test_jig\test123\test123\src\hvtconstants.c" 0 0 1363 349 0 11 
-"D:\Others\hv_test_jig\test123\test123\src\intprg.c" 0 0 1277 349 0 8 
-"D:\Others\hv_test_jig\test123\test123\src\resetprg.c" 0 0 1277 377 0 6 
-"D:\Others\hv_test_jig\test123\test123\src\tanktest.c" 0 0 1363 406 0 15 
+"D:\Others\hv_test_jig\test123\test123\src\hvtconstants.c" 0 0 1517 480 0 10 
+"D:\Others\hv_test_jig\test123\test123\src\init.c" 0 0 1517 524 0 42 
+"D:\Others\hv_test_jig\test123\test123\src\intprg.c" 0 0 1277 349 0 7 
+"D:\Others\hv_test_jig\test123\test123\src\resetprg.c" 0 0 1277 377 0 5 
+"D:\Others\hv_test_jig\test123\test123\src\tanktest.c" 0 0 1363 406 0 14 
 "D:\Others\hv_test_jig\test123\test123\src\tft.c" 0 0 1517 627 0 2 
-"D:\Others\hv_test_jig\test123\test123\src\timer.c" 0 0 1319 406 0 29 
-"D:\Others\hv_test_jig\test123\test123\src\transactions.c" 0 0 1363 406 0 16 
-"D:\Others\hv_test_jig\test123\test123\src\uart.c" 0 0 1449 627 0 14 
+"D:\Others\hv_test_jig\test123\test123\src\timer.c" 0 0 1319 406 0 28 
+"D:\Others\hv_test_jig\test123\test123\src\transactions.c" 0 0 1363 406 0 15 
+"D:\Others\hv_test_jig\test123\test123\src\uart.c" 0 0 1449 627 0 13 
 [LOADED_PROJECTS]
 "test123" 
 [END]

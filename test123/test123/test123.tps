@@ -25,7 +25,7 @@
 "DefaultSession" 
 "SessionM16C_R8C_Simulator" 
 [GENERAL_DATA_CONFIGURATION_Release]
-"PROJECT_FILES_MODIFIED_DATA_TAG" "TRUE" 
+"PROJECT_FILES_MODIFIED_DATA_TAG" "FALSE" 
 [SESSIONS_Release]
 "DefaultSession" 
 "SessionM16C_R8C_Simulator" 
